@@ -12,7 +12,7 @@ class Network: ObservableObject{
     
     //@Published private var Memo: MemoApp
     
-    func login (_ email: String, _ password: String){
+    func login (_ email: String, _ password: String, _ condition: ViewCondition){
         let url = URL(string: "http://jsquare.top:31162/api/user/users/login")!
         var request = URLRequest(url: url)
         request.httpMethod = "POST"
@@ -25,12 +25,18 @@ class Network: ObservableObject{
             if error != nil {
                 print("errror: " + error.debugDescription)
             }
-            print(response ?? "bad")
+            //print(response ?? "bad")
             if let httpResponse = response as? HTTPURLResponse {
                 if httpResponse.statusCode == 200 {
                     print("aaa")
-                } else if httpResponse.statusCode == 403{
+                    condition.login()
+                } else {
                     print("bbb")
+                        DispatchQueue.main.async {
+                            condition.login()
+                        }
+                    print(condition.isLogin)
+
                 }
             }
         }
@@ -42,18 +48,20 @@ class Network: ObservableObject{
         var request = URLRequest(url: url)
         request.httpMethod = "POST"
         request.timeoutInterval = 15
-        let dic: [String: String] = ["email": email, "username": username, "password": password]
+        let dic: [String: String] = ["username": username, "email": email, "password": password]
         let data = try! JSONSerialization.data(withJSONObject: dic, options: .prettyPrinted)
         request.httpBody = data
         request.addValue("application/json", forHTTPHeaderField: "Content-Tyep")
         let task = URLSession.shared.dataTask(with: request) { data, response, error in
             if error != nil {
-                print("errror: "+error.debugDescription)
+                print("errror: " + error.debugDescription)
             }
             print(response!)
             if let httpResponse = response as? HTTPURLResponse {
                 if httpResponse.statusCode == 200 {
                     print("aaa")
+                } else {
+                    print("bbb")
                 }
             }
         }

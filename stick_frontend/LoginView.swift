@@ -58,7 +58,7 @@ struct LoginView: View {
                 HStack {
                     Spacer()
                 Button (action: {
-                    self.Net.login(self.Email, self.Password)
+                    self.Net.login(self.Email, self.Password, self.condition)
                 }, label: {Text("Login").bold()})
                 .padding(5)
                 .foregroundColor(Color.white)
@@ -84,6 +84,8 @@ struct LoginView: View {
         }
     }
 }
+
+
 
 
 struct LoginView_Previews: PreviewProvider {

@@ -19,7 +19,7 @@ class ViewCondition: ObservableObject {
         } else {
             self.isLogin = true
         }
-        print(self.isLogin)
+        print(self.isLogin, "a")
     }
     
     func signup() {
