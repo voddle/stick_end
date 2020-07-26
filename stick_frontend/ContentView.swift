@@ -22,6 +22,7 @@ struct ContentView: View {
                     }
                 }
                 .tag(0)
+            
             Text("Second View")
                 .font(.title)
                 .tabItem {
@@ -31,6 +32,26 @@ struct ContentView: View {
                     }
                 }
                 .tag(1)
+            
+            Text("Third View")
+            .font(.title)
+            .tabItem {
+                VStack {
+                    Image(systemName: "keyboard")
+                    Text("Third")
+                }
+            }
+            .tag(2)
+            
+            Text("Fourth View")
+            .font(.title)
+            .tabItem {
+                VStack {
+                    Image(systemName: "person.crop.circle")
+                    Text("profile")
+                }
+            }
+            .tag(2)
         }
     }
 }
