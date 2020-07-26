@@ -32,10 +32,9 @@ class Network: ObservableObject{
                     condition.login()
                 } else {
                     print("bbb")
-                        DispatchQueue.main.async {
+                        //DispatchQueue.main.async {
                             condition.login()
-                        }
-                    print(condition.isLogin)
+                        //}
 
                 }
             }
@@ -43,7 +42,7 @@ class Network: ObservableObject{
         task.resume()
     }
     
-    func signUp(_ email: String, _ username: String, _ password: String) {
+    func signUp(_ email: String, _ username: String, _ password: String, _ condition: ViewCondition) {
         let url = URL(string: "http://jsquare.top:31162/api/user/users/register")!
         var request = URLRequest(url: url)
         request.httpMethod = "POST"
@@ -60,8 +59,10 @@ class Network: ObservableObject{
             if let httpResponse = response as? HTTPURLResponse {
                 if httpResponse.statusCode == 200 {
                     print("aaa")
+                    condition.signup()
                 } else {
                     print("bbb")
+                    condition.signup()
                 }
             }
         }

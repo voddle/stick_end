@@ -10,7 +10,9 @@ import SwiftUI
 
 struct SignupView: View {
     
+    @ObservedObject var condition: ViewCondition
     @ObservedObject var Net: Network
+
     
     @State private var Email: String = ""
     @State private var Username: String = ""
@@ -68,7 +70,7 @@ struct SignupView: View {
                 HStack {
                     Spacer()
                 Button (action: {
-                    self.Net.signUp(self.Email, self.Username, self.Password)
+                    self.Net.signUp(self.Email, self.Username, self.Password, self.condition)
                 }, label: {Text("Signup")                        .bold()
                     })
                     
@@ -87,6 +89,6 @@ struct SignupView: View {
 
 struct SignupView_Previews: PreviewProvider {
     static var previews: some View {
-        SignupView(Net: Network())
+        SignupView(condition: ViewCondition(),Net: Network())
     }
 }

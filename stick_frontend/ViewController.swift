@@ -20,7 +20,7 @@ struct ViewController: View {
                 if condition.isSignup == true {
                     LoginView(condition: condition, Net: Network())
                 } else {
-                    SignupView(Net: Network())
+                    SignupView(condition: condition, Net: Network())
                 }
             }            //ContentView()
         }
