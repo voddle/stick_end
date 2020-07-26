@@ -8,10 +8,26 @@
 
 import Foundation
 
-class : ObservableObject {
-    @Published var isLogin: Bool = false
+class ViewCondition: ObservableObject {
+    @Published var isLogin = false
+    @Published var isSignup = true
+
     
-    func login () {
-        self.isLogin != self.isLogin
+    func login() {
+        if self.isLogin {
+            self.isLogin = false
+        } else {
+            self.isLogin = true
+        }
+        print(self.isLogin)
+    }
+    
+    func signup() {
+        if self.isSignup {
+            self.isSignup = false
+        } else {
+            self.isSignup = true
+        }
+        print("sign upcondition \(self.isSignup)")
     }
 }
