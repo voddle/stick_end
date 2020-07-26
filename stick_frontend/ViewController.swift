@@ -10,15 +10,15 @@ import SwiftUI
 
 struct ViewController: View {
     
-    @ObservedObject var condition = ViewCondition()
+    @ObservedObject var condition: ViewCondition
      
     var body: some View {
         ZStack {
-            if self.condition.isLogin == true {
+            if condition.isLogin == true {
                 ContentView()
             } else {
-                if self.condition.isSignup == true {
-                    LoginView(condition: ViewCondition(), Net: Network())
+                if condition.isSignup == true {
+                    LoginView(condition: condition, Net: Network())
                 } else {
                     SignupView(Net: Network())
                 }
