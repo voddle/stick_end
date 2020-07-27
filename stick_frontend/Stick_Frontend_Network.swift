@@ -84,7 +84,6 @@ class Network: ObservableObject{
                     condition.login()
                 } else {
                     print("bbb")
-                    condition.login()
                 }
             }
         }
