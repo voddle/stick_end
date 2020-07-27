@@ -83,12 +83,60 @@ struct SignupView: View {
                 }
                 .padding(.top)
             }
+            //adsfasdfasdf
+            swipeGesture()
+            
         }
+        
     }
 }
 
 struct SignupView_Previews: PreviewProvider {
     static var previews: some View {
         SignupView(condition: ViewCondition(),Net: Network())
+    }
+}
+
+//MARK: - Add SwipeGesture to the SignupView
+struct swipeGesture: UIViewRepresentable {
+    
+    func makeCoordinator() -> swipeGesture.Coordinator {
+
+        swipeGesture.Coordinator()
+
+    }
+
+    func makeUIView(context: UIViewRepresentableContext<swipeGesture>) -> UIView {
+
+        let view = UIView()
+        view.backgroundColor = .clear
+        let left = UISwipeGestureRecognizer(target: context.coordinator, action: #selector(context.coordinator.left))
+        left.direction = .left
+
+//        let right = UISwipeGestureRecognizer(target: context.coordinator, action: #selector(context.coordinator.right))
+//        right.direction = .right
+
+        view.addGestureRecognizer(left)
+        //view.addGestureRecognizer(right)
+
+        
+        
+        return view
+
+    }
+
+    func updateUIView(_ uiView: UIView, context: UIViewRepresentableContext<swipeGesture>) {
+
+    }
+
+    class Coordinator {
+        // OC？
+        @objc func left() {
+            
+        }
+
+//        @objc func right() {
+//
+//        }
     }
 }

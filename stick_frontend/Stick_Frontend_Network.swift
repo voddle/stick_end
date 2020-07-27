@@ -33,7 +33,6 @@ class Network: ObservableObject{
                 } else {
                     print("bbb")
                         //DispatchQueue.main.async {
-                            condition.login()
                         //}
 
                 }
@@ -62,7 +61,6 @@ class Network: ObservableObject{
                     condition.signup()
                 } else {
                     print("bbb")
-                    condition.signup()
                 }
             }
         }

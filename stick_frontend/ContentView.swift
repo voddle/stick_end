@@ -48,7 +48,7 @@ struct ContentView: View {
             .tabItem {
                 VStack {
                     Image(systemName: "person.crop.circle")
-                    Text("profile")
+                    Text("")
                 }
             }
             .tag(2)
