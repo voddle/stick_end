@@ -39,8 +39,9 @@ struct SignupView: View {
                     Spacer()
                 }
                 TextField(" E-mail", text: $Email)
+                    .padding(3)
                     .overlay(Rectangle().stroke().foregroundColor(Color.black))
-                .padding(.horizontal, 30)
+                .padding(.horizontal, 30).autocapitalization(UITextAutocapitalizationType.none)
                 
                 HStack {
                     Text("Username")
@@ -51,8 +52,9 @@ struct SignupView: View {
                     Spacer()
                 }
                 TextField(" Username", text: $Username)
+                    .padding(3)
                     .overlay(Rectangle().stroke().foregroundColor(Color.black))
-                .padding(.horizontal, 30)
+                .padding(.horizontal, 30).autocapitalization(UITextAutocapitalizationType.none)
                 
                 HStack {
                     Text("Password")
@@ -64,8 +66,10 @@ struct SignupView: View {
                     Spacer()
                 }
                 TextField(" Password", text: $Password)
+                    .padding(3)
                     .overlay(Rectangle().stroke().foregroundColor(Color.black))
-                .padding(.horizontal, 30)
+                    .padding(.horizontal, 30).autocapitalization(UITextAutocapitalizationType.none)
+                
                 
                 HStack {
                     Spacer()
@@ -82,9 +86,26 @@ struct SignupView: View {
 
                 }
                 .padding(.top)
+                HStack {
+                    Spacer()
+                Button (action: {
+                    self.condition.signup()
+                }, label: {Text("Already have one").bold()
+                    })
+                    
+                    .padding(.horizontal, 2)
+                .foregroundColor(Color.white)
+                    .background(Rectangle())
+                    .padding(.horizontal, 30)
+                    .padding(.top, 10)
+
+                }
+                .padding(.top)
+                
             }
-            //adsfasdfasdf
-            swipeGesture()
+            
+            //swipeGesture()
+            //gestrue trail
             
         }
         
@@ -97,46 +118,48 @@ struct SignupView_Previews: PreviewProvider {
     }
 }
 
+
+
 //MARK: - Add SwipeGesture to the SignupView
-struct swipeGesture: UIViewRepresentable {
-    
-    func makeCoordinator() -> swipeGesture.Coordinator {
-
-        swipeGesture.Coordinator()
-
-    }
-
-    func makeUIView(context: UIViewRepresentableContext<swipeGesture>) -> UIView {
-
-        let view = UIView()
-        view.backgroundColor = .clear
-        let left = UISwipeGestureRecognizer(target: context.coordinator, action: #selector(context.coordinator.left))
-        left.direction = .left
-
-//        let right = UISwipeGestureRecognizer(target: context.coordinator, action: #selector(context.coordinator.right))
-//        right.direction = .right
-
-        view.addGestureRecognizer(left)
-        //view.addGestureRecognizer(right)
-
-        
-        
-        return view
-
-    }
-
-    func updateUIView(_ uiView: UIView, context: UIViewRepresentableContext<swipeGesture>) {
-
-    }
-
-    class Coordinator {
-        // OC？
-        @objc func left() {
-            
-        }
-
-//        @objc func right() {
+//struct swipeGesture: UIViewRepresentable {
+//
+//    func makeCoordinator() -> swipeGesture.Coordinator {
+//
+//        swipeGesture.Coordinator()
+//
+//    }
+//
+//    func makeUIView(context: UIViewRepresentableContext<swipeGesture>) -> UIView {
+//
+//        let view = UIView()
+//        view.backgroundColor = .clear
+//        let left = UISwipeGestureRecognizer(target: context.coordinator, action: #selector(context.coordinator.left))
+//        left.direction = .left
+//
+////        let right = UISwipeGestureRecognizer(target: context.coordinator, action: #selector(context.coordinator.right))
+////        right.direction = .right
+//
+//        view.addGestureRecognizer(left)
+//        //view.addGestureRecognizer(right)
+//
+//
+//
+//        return view
+//
+//    }
+//
+//    func updateUIView(_ uiView: UIView, context: UIViewRepresentableContext<swipeGesture>) {
+//
+//    }
+//
+//    class Coordinator {
+//        // OC？
+//        @objc func left() {
 //
 //        }
-    }
-}
+//
+////        @objc func right() {
+////
+////        }
+//    }
+//}

@@ -39,8 +39,9 @@ struct LoginView: View {
                     Spacer()
                 }
                 TextField(" E-mail", text: $Email)
+                .padding(3)
                     .overlay(Rectangle().stroke().foregroundColor(Color.black))
-                .padding(.horizontal, 30)
+                .padding(.horizontal, 30).autocapitalization(UITextAutocapitalizationType.none)
                 
                 HStack {
                     Text("Password")
@@ -51,8 +52,9 @@ struct LoginView: View {
                 }
                 .padding(.top)
                 TextField(" Password", text: $Password)
+                    .padding(3)
                     .overlay(Rectangle().stroke().foregroundColor(Color.black))
-                .padding(.horizontal, 30)
+                .padding(.horizontal, 30).autocapitalization(UITextAutocapitalizationType.none)
                     .padding(.bottom, 30)
                 
                 HStack {

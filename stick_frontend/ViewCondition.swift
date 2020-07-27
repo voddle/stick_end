@@ -9,7 +9,7 @@
 import Foundation
 
 class ViewCondition: ObservableObject {
-    @Published var isLogin = false
+    @Published var isLogin = true
     @Published var isSignup = true
 
     

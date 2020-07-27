@@ -9,6 +9,10 @@
 import SwiftUI
 
 struct ContentView: View {
+    
+    @ObservedObject var condition: ViewCondition
+    @ObservedObject var Net: Network
+    
     @State private var selection = 0
  
     var body: some View {
@@ -43,12 +47,12 @@ struct ContentView: View {
             }
             .tag(2)
             
-            Text("Fourth View")
+            ProfileView(condition: self.condition, Net: self.Net)
             .font(.title)
             .tabItem {
                 VStack {
                     Image(systemName: "person.crop.circle")
-                    Text("")
+                    Text("Profile")
                 }
             }
             .tag(2)
@@ -58,6 +62,6 @@ struct ContentView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        ContentView(condition: ViewCondition(), Net: Network())
     }
 }

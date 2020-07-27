@@ -25,7 +25,7 @@ class Network: ObservableObject{
             if error != nil {
                 print("errror: " + error.debugDescription)
             }
-            //print(response ?? "bad")
+            print(response ?? "bad")
             if let httpResponse = response as? HTTPURLResponse {
                 if httpResponse.statusCode == 200 {
                     print("aaa")
@@ -61,6 +61,30 @@ class Network: ObservableObject{
                     condition.signup()
                 } else {
                     print("bbb")
+                    
+                }
+            }
+        }
+        task.resume()
+    }
+    
+    func logout(_ condition: ViewCondition) {
+        let url = URL(string: "http://jsquare.top:31162/api/user/users/logout")!
+        var request = URLRequest(url: url)
+        request.httpMethod = "POST"
+        request.timeoutInterval = 15
+        let task = URLSession.shared.dataTask(with: request) { data, response, error in
+            if error != nil {
+                print("errror: " + error.debugDescription)
+            }
+            print(response!)
+            if let httpResponse = response as? HTTPURLResponse {
+                if httpResponse.statusCode == 200 {
+                    print("aaa")
+                    condition.login()
+                } else {
+                    print("bbb")
+                    condition.login()
                 }
             }
         }

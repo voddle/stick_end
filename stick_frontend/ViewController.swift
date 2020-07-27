@@ -15,7 +15,7 @@ struct ViewController: View {
     var body: some View {
         ZStack {
             if condition.isLogin == true {
-                ContentView()
+                ContentView(condition: condition, Net: Network())
             } else {
                 if condition.isSignup == true {
                     LoginView(condition: condition, Net: Network())
