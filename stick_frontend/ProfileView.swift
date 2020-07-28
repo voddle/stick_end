@@ -13,10 +13,61 @@ struct ProfileView: View {
     @ObservedObject var condition: ViewCondition
     @ObservedObject var Net: Network
     
+    
     var body: some View {
-        Button (action: {
-            self.Net.logout(self.condition)
-        }, label: { Text("Logout")})
+        
+        
+        VStack {
+            HStack {
+            Text("Username")
+                .font(.largeTitle)
+                .bold()
+                .padding()
+                Spacer()
+            }
+            
+            List {
+                Text("something")
+                .font(.title)
+                .bold()
+                    .padding(.horizontal, 5)
+                    .background(RoundedRectangle(cornerRadius: 10).zIndex(-1).foregroundColor(Color.gray))
+                Text("something")
+                .font(.title)
+                .bold()
+                    .padding(.horizontal, 5)
+                    .background(RoundedRectangle(cornerRadius: 10).zIndex(-1).foregroundColor(Color.gray))
+                Text("something")
+                .font(.title)
+                .bold()
+                    .padding(.horizontal, 5)
+                    .background(RoundedRectangle(cornerRadius: 10).zIndex(-1).foregroundColor(Color.gray))
+                Text("something")
+                .font(.title)
+                .bold()
+                    .padding(.horizontal, 5)
+                    .background(RoundedRectangle(cornerRadius: 10).zIndex(-1).foregroundColor(Color.gray))
+                Text("something")
+                .font(.title)
+                .bold()
+                    .padding(.horizontal, 5)
+                    .background(RoundedRectangle(cornerRadius: 10).zIndex(-1).foregroundColor(Color.gray))
+            }
+        
+            .listStyle(PlainListStyle())
+            
+            Spacer()
+            
+            HStack {
+                Spacer()
+                Button (action: {
+                    self.Net.logout(self.condition)
+                }, label: { Text("Logout").padding(50)})
+                    
+                    
+            }
+        }
+        .onAppear {UITableView.appearance().separatorStyle = .none}
     }
 }
 
