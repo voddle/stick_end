@@ -30,6 +30,14 @@ class Network: ObservableObject{
                 if httpResponse.statusCode == 200 {
                     print("aaa")
                     condition.login()
+                    
+//                    var props = Dictionary<HTTPCookiePropertyKey, Any>()
+//                    props[HTTPCookiePropertyKey.name] = "cookie3"
+//                    props[HTTPCookiePropertyKey.value] = "333"
+//                    props[HTTPCookiePropertyKey.path] = "/"
+//                    props[HTTPCookiePropertyKey.domain] = "jsquare.top"
+//                    let cookie = HTTPCookie(properties: props)
+                    
                 } else {
                     print("bbb")
                         //DispatchQueue.main.async {
