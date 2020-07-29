@@ -24,6 +24,9 @@ struct ProfileView: View {
                 .bold()
                 .padding()
                 Spacer()
+                Image(systemName: "person.crop.circle") // head image
+                    .font(.largeTitle)
+                .padding()
             }
             
             List {
@@ -67,7 +70,7 @@ struct ProfileView: View {
                     
             }
         }
-        .onAppear {UITableView.appearance().separatorStyle = .none}
+        .onAppear {UITableView.appearance().separatorStyle = .none} // invisible the sperate line
     }
 }
 

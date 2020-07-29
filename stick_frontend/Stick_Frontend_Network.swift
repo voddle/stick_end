@@ -38,6 +38,7 @@ class Network: ObservableObject{
 //                    props[HTTPCookiePropertyKey.domain] = "jsquare.top"
 //                    let cookie = HTTPCookie(properties: props)
                     
+                    
                 } else {
                     print("bbb")
                         //DispatchQueue.main.async {
