@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct stick {
+struct stick{
     let Stick_id: UUID
     let Creat_at: String
     let End_at: String
@@ -17,5 +17,6 @@ struct stick {
     let Location: String
     var Content: String
     let User_id: Int
+    
 }
 
