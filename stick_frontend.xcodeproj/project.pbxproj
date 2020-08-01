@@ -19,6 +19,7 @@
 		6DA4F51F24CD77EE00A88DC4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DA4F51E24CD77EE00A88DC4 /* ViewController.swift */; };
 		6DA4F52524CDD46B00A88DC4 /* ViewCondition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DA4F52424CDD46B00A88DC4 /* ViewCondition.swift */; };
 		6DA4F52724CEF5E700A88DC4 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DA4F52624CEF5E700A88DC4 /* ProfileView.swift */; };
+		6DA4F52924D50AD600A88DC4 /* Stick.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DA4F52824D50AD600A88DC4 /* Stick.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,7 @@
 		6DA4F51E24CD77EE00A88DC4 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		6DA4F52424CDD46B00A88DC4 /* ViewCondition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewCondition.swift; sourceTree = "<group>"; };
 		6DA4F52624CEF5E700A88DC4 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		6DA4F52824D50AD600A88DC4 /* Stick.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stick.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,6 +72,7 @@
 			children = (
 				6DA4F50424CD33E500A88DC4 /* AppDelegate.swift */,
 				6DA4F50624CD33E500A88DC4 /* SceneDelegate.swift */,
+				6DA4F52824D50AD600A88DC4 /* Stick.swift */,
 				6DA4F51824CD4EC900A88DC4 /* Stick_Frontend_Network.swift */,
 				6DA4F52424CDD46B00A88DC4 /* ViewCondition.swift */,
 				6DA4F51E24CD77EE00A88DC4 /* ViewController.swift */,
@@ -168,6 +171,7 @@
 				6DA4F52724CEF5E700A88DC4 /* ProfileView.swift in Sources */,
 				6DA4F51D24CD660A00A88DC4 /* SignupView.swift in Sources */,
 				6DA4F50524CD33E500A88DC4 /* AppDelegate.swift in Sources */,
+				6DA4F52924D50AD600A88DC4 /* Stick.swift in Sources */,
 				6DA4F51924CD4EC900A88DC4 /* Stick_Frontend_Network.swift in Sources */,
 				6DA4F50724CD33E500A88DC4 /* SceneDelegate.swift in Sources */,
 				6DA4F51F24CD77EE00A88DC4 /* ViewController.swift in Sources */,

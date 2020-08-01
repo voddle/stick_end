@@ -8,6 +8,7 @@
 
 import Foundation
 
+
 class Network: ObservableObject{
     
     //@Published private var Memo: MemoApp
