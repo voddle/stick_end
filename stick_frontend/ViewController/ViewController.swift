@@ -4,16 +4,17 @@ import SwiftUI
 struct ViewController: View {
     
     @ObservedObject var condition: ViewCondition
+    @ObservedObject var user: User
      
     var body: some View {
         ZStack {
             if condition.isLogin == true {
-                ContentView(condition: condition, Net: Network())
+                ContentView(condition: condition, user: user)
             } else {
                 if condition.isSignup == true {
-                    LoginView(condition: condition, Net: Network())
+                    LoginView(condition: condition, user: user)
                 } else {
-                    SignupView(condition: condition, Net: Network())
+                    SignupView(condition: condition, user: user)
                 }
             }            //ContentView()
         }
@@ -22,6 +23,6 @@ struct ViewController: View {
 
 struct ViewController_Previews: PreviewProvider {
     static var previews: some View {
-        ViewController(condition: ViewCondition())
+        ViewController(condition: ViewCondition(), user: User())
     }
 }

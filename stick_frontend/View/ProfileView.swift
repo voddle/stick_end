@@ -11,7 +11,7 @@ import SwiftUI
 struct ProfileView: View {
     
     @ObservedObject var condition: ViewCondition
-    @ObservedObject var Net: Network
+    @ObservedObject var user: User
     
     
     var body: some View {
@@ -64,7 +64,7 @@ struct ProfileView: View {
             HStack {
                 Spacer()
                 Button (action: {
-                    self.Net.logout(self.condition)
+                    self.user.logout()
                 }, label: { Text("Logout").padding(50)})
                     
                     
@@ -76,6 +76,6 @@ struct ProfileView: View {
 
 struct ProfileView_Previews: PreviewProvider {
     static var previews: some View {
-        ProfileView(condition: ViewCondition(), Net: Network())
+        ProfileView(condition: ViewCondition(), user: User())
     }
 }

@@ -15,6 +15,9 @@
 		58CDAF3324D51B07002B69A2 /* ViewCondition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58CDAF3224D51B07002B69A2 /* ViewCondition.swift */; };
 		58CDAF3624D51BD9002B69A2 /* Stick.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58CDAF3524D51BD9002B69A2 /* Stick.swift */; };
 		58CDAF3924D526BD002B69A2 /* URL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58CDAF3824D526BD002B69A2 /* URL.swift */; };
+		58CDAF3B24D5433D002B69A2 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58CDAF3A24D5433D002B69A2 /* User.swift */; };
+		58CDAF3F24D54786002B69A2 /* AvatarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58CDAF3E24D54786002B69A2 /* AvatarView.swift */; };
+		58CDAF4224D55E32002B69A2 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 58CDAF4124D55E32002B69A2 /* Alamofire */; };
 		6DA4F50524CD33E500A88DC4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DA4F50424CD33E500A88DC4 /* AppDelegate.swift */; };
 		6DA4F50724CD33E500A88DC4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DA4F50624CD33E500A88DC4 /* SceneDelegate.swift */; };
 		6DA4F50B24CD33E700A88DC4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6DA4F50A24CD33E700A88DC4 /* Assets.xcassets */; };
@@ -33,6 +36,8 @@
 		58CDAF3224D51B07002B69A2 /* ViewCondition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewCondition.swift; sourceTree = "<group>"; };
 		58CDAF3524D51BD9002B69A2 /* Stick.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stick.swift; sourceTree = "<group>"; };
 		58CDAF3824D526BD002B69A2 /* URL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URL.swift; sourceTree = "<group>"; };
+		58CDAF3A24D5433D002B69A2 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		58CDAF3E24D54786002B69A2 /* AvatarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarView.swift; sourceTree = "<group>"; };
 		6DA4F50124CD33E500A88DC4 /* stick_frontend.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = stick_frontend.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6DA4F50424CD33E500A88DC4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6DA4F50624CD33E500A88DC4 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -49,6 +54,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6DA4F52F24D53EA500A88DC4 /* SwiftJWT in Frameworks */,
+				58CDAF4224D55E32002B69A2 /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -62,6 +68,7 @@
 				58CDAF2924D51529002B69A2 /* LoginView.swift */,
 				58CDAF2B24D5155B002B69A2 /* ContentView.swift */,
 				58CDAF2D24D51583002B69A2 /* ProfileView.swift */,
+				58CDAF3E24D54786002B69A2 /* AvatarView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -79,6 +86,7 @@
 			isa = PBXGroup;
 			children = (
 				58CDAF3524D51BD9002B69A2 /* Stick.swift */,
+				58CDAF3A24D5433D002B69A2 /* User.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -151,6 +159,7 @@
 			name = stick_frontend;
 			packageProductDependencies = (
 				6DA4F52E24D53EA500A88DC4 /* SwiftJWT */,
+				58CDAF4124D55E32002B69A2 /* Alamofire */,
 			);
 			productName = stick_frontend;
 			productReference = 6DA4F50124CD33E500A88DC4 /* stick_frontend.app */;
@@ -182,6 +191,7 @@
 			mainGroup = 6DA4F4F824CD33E500A88DC4;
 			packageReferences = (
 				6DA4F52D24D53EA500A88DC4 /* XCRemoteSwiftPackageReference "Swift-JWT" */,
+				58CDAF4024D55E32002B69A2 /* XCRemoteSwiftPackageReference "Alamofire" */,
 			);
 			productRefGroup = 6DA4F50224CD33E500A88DC4 /* Products */;
 			projectDirPath = "";
@@ -214,10 +224,12 @@
 				6DA4F50524CD33E500A88DC4 /* AppDelegate.swift in Sources */,
 				58CDAF3324D51B07002B69A2 /* ViewCondition.swift in Sources */,
 				58CDAF3924D526BD002B69A2 /* URL.swift in Sources */,
+				58CDAF3F24D54786002B69A2 /* AvatarView.swift in Sources */,
 				58CDAF3124D51ADC002B69A2 /* ViewController.swift in Sources */,
 				6DA4F51924CD4EC900A88DC4 /* Stick_Frontend_Network.swift in Sources */,
 				6DA4F50724CD33E500A88DC4 /* SceneDelegate.swift in Sources */,
 				58CDAF2A24D51529002B69A2 /* LoginView.swift in Sources */,
+				58CDAF3B24D5433D002B69A2 /* User.swift in Sources */,
 				58CDAF2E24D51583002B69A2 /* ProfileView.swift in Sources */,
 				58CDAF3624D51BD9002B69A2 /* Stick.swift in Sources */,
 				58CDAF2824D5150B002B69A2 /* SignupView.swift in Sources */,
@@ -416,6 +428,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		58CDAF4024D55E32002B69A2 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.2.2;
+			};
+		};
 		6DA4F52D24D53EA500A88DC4 /* XCRemoteSwiftPackageReference "Swift-JWT" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/IBM-Swift/Swift-JWT.git";
@@ -427,6 +447,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		58CDAF4124D55E32002B69A2 /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 58CDAF4024D55E32002B69A2 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
 		6DA4F52E24D53EA500A88DC4 /* SwiftJWT */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 6DA4F52D24D53EA500A88DC4 /* XCRemoteSwiftPackageReference "Swift-JWT" */;

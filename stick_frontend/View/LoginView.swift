@@ -10,8 +10,8 @@ import SwiftUI
 
 struct LoginView: View {
     @ObservedObject var condition: ViewCondition
-    @ObservedObject var Net: Network
     
+    @ObservedObject var user: User
     @State private var Email: String = ""
     @State private var Password: String = ""
     
@@ -60,7 +60,7 @@ struct LoginView: View {
                 HStack {
                     Spacer()
                 Button (action: {
-                    self.Net.login(self.Email, self.Password, self.condition)
+                    self.user.login(self.Email, self.Password)
                 }, label: {Text("Login").bold()})
                 .padding(5)
                 .foregroundColor(Color.white)
@@ -92,7 +92,7 @@ struct LoginView: View {
 
 struct LoginView_Previews: PreviewProvider {
     static var previews: some View {
-        LoginView(condition: ViewCondition(), Net: Network())
+        LoginView(condition: ViewCondition(), user: User())
     }
 }
 
