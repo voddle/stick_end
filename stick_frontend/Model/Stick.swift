@@ -18,3 +18,4 @@ struct stick {
     var Content: String
     let User_id: Int
 }
+

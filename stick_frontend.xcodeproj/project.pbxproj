@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -21,6 +21,7 @@
 		6DA4F50E24CD33E700A88DC4 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6DA4F50D24CD33E700A88DC4 /* Preview Assets.xcassets */; };
 		6DA4F51124CD33E700A88DC4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6DA4F50F24CD33E700A88DC4 /* LaunchScreen.storyboard */; };
 		6DA4F51924CD4EC900A88DC4 /* Stick_Frontend_Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DA4F51824CD4EC900A88DC4 /* Stick_Frontend_Network.swift */; };
+		6DA4F52F24D53EA500A88DC4 /* SwiftJWT in Frameworks */ = {isa = PBXBuildFile; productRef = 6DA4F52E24D53EA500A88DC4 /* SwiftJWT */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -47,6 +48,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6DA4F52F24D53EA500A88DC4 /* SwiftJWT in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -147,6 +149,9 @@
 			dependencies = (
 			);
 			name = stick_frontend;
+			packageProductDependencies = (
+				6DA4F52E24D53EA500A88DC4 /* SwiftJWT */,
+			);
 			productName = stick_frontend;
 			productReference = 6DA4F50124CD33E500A88DC4 /* stick_frontend.app */;
 			productType = "com.apple.product-type.application";
@@ -175,6 +180,9 @@
 				Base,
 			);
 			mainGroup = 6DA4F4F824CD33E500A88DC4;
+			packageReferences = (
+				6DA4F52D24D53EA500A88DC4 /* XCRemoteSwiftPackageReference "Swift-JWT" */,
+			);
 			productRefGroup = 6DA4F50224CD33E500A88DC4 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -406,6 +414,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		6DA4F52D24D53EA500A88DC4 /* XCRemoteSwiftPackageReference "Swift-JWT" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/IBM-Swift/Swift-JWT.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.6.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		6DA4F52E24D53EA500A88DC4 /* SwiftJWT */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 6DA4F52D24D53EA500A88DC4 /* XCRemoteSwiftPackageReference "Swift-JWT" */;
+			productName = SwiftJWT;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 6DA4F4F924CD33E500A88DC4 /* Project object */;
 }
