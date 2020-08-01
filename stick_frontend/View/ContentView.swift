@@ -16,6 +16,7 @@ struct ContentView: View {
     @State private var selection = 0
  
     var body: some View {
+        
         TabView(selection: $selection){
             Text("First View")
                 .font(.title)
@@ -26,7 +27,7 @@ struct ContentView: View {
                     }
                 }
                 .tag(0)
-            
+
             Text("Second View")
                 .font(.title)
                 .tabItem {
@@ -36,7 +37,7 @@ struct ContentView: View {
                     }
                 }
                 .tag(1)
-            
+
             Text("Third View")
             .font(.title)
             .tabItem {
@@ -46,7 +47,7 @@ struct ContentView: View {
                 }
             }
             .tag(2)
-            
+
             ProfileView(condition: self.condition, Net: self.Net)
             .font(.title)
             .tabItem {
