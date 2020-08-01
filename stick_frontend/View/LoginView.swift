@@ -95,3 +95,4 @@ struct LoginView_Previews: PreviewProvider {
         LoginView(condition: ViewCondition(), Net: Network())
     }
 }
+

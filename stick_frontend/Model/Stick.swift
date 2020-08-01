@@ -16,5 +16,5 @@ struct stick {
     var Thumb: Int
     let Location: String
     var Content: String
-    let User_id: int
+    let User_id: Int
 }

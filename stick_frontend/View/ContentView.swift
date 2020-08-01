@@ -65,3 +65,4 @@ struct ContentView_Previews: PreviewProvider {
         ContentView(condition: ViewCondition(), Net: Network())
     }
 }
+
