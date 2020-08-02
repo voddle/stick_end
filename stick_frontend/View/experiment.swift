@@ -15,11 +15,13 @@ struct experiment: View {
     var body: some View {
         
         VStack {
+            Group {
             HStack {
                 Image(systemName: "person.crop.circle")
-                    .font(.largeTitle)
+                    .font(.title)
                 VStack (alignment: .leading){
                     Text("Username")
+                        .font(.caption)
                         .bold()
                         .lineLimit(1)
                         .minimumScaleFactor(0.5)//magic code, don't know how it work, but it stop Text() being truncated
@@ -27,20 +29,21 @@ struct experiment: View {
                         .font(.caption)
                 }
                 Spacer()
-                Group{
-                    VStack (alignment: .trailing){
-                        
-                        Text("From xxx")
-                            .font(.caption)
-                            .lineLimit(1)
-                            .minimumScaleFactor(0.5)
-                        Text("XXX times ago")
-                            .font(.caption)
-                            .lineLimit(1)
-                            .minimumScaleFactor(0.5)
+                    Group{
+                        VStack (alignment: .trailing){
+                            
+                            Text("From xxx")
+                                .font(.caption)
+                                .lineLimit(1)
+                                .minimumScaleFactor(0.5)
+                            Text("XXX times ago")
+                                .font(.caption)
+                                .lineLimit(1)
+                                .minimumScaleFactor(0.5)
+                        }
                     }
+                    //.padding(.leading, self.screenSize.width * 0.4)
                 }
-                //.padding(.leading, self.screenSize.width * 0.4)
             }
             HStack {
                 Text("#TAG#TAG#TAG")
@@ -49,7 +52,7 @@ struct experiment: View {
             }
             
             HStack {
-                Text("XXXXXXXXXXXXXXXXXXCONTENTXXXXXXXXXXXXXX")
+                Text("XXXXXXXXXXXXXXXXXXCONTENTXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXCONTENTXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXCONTENTXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXCONTENTXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXCONTENTXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXCONTENTXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXCONTENTXXXXXXXXXXXXXX")
                     .font(.caption)
                 
                 Spacer(minLength: 0)
@@ -57,8 +60,8 @@ struct experiment: View {
             }
             .padding(.top, 5)
         }
-    .padding(self.screenSize.width * 0.05)
-        .overlay(Rectangle().stroke().foregroundColor(Color.black).padding(self.screenSize.width * 0.02))
+    .padding(self.screenSize.width * 0.03)
+        .overlay(Rectangle().stroke(lineWidth: 2).foregroundColor(Color.black).padding(self.screenSize.width * 0.02))
         .frame(maxHeight: self.screenSize.height * 0.15)
     }
 }
