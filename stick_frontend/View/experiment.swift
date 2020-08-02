@@ -51,7 +51,9 @@ struct experiment: View {
             HStack {
                 Text("XXXXXXXXXXXXXXXXXXCONTENTXXXXXXXXXXXXXX")
                     .font(.caption)
-                Spacer()
+                
+                Spacer(minLength: 0)
+                    
             }
             .padding(.top, 5)
         }
