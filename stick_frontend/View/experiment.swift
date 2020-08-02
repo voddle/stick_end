@@ -41,7 +41,6 @@ struct experiment: View {
                     }
                 }
                 //.padding(.leading, self.screenSize.width * 0.4)
-                
             }
             HStack {
                 Text("#TAG#TAG#TAG")
@@ -49,11 +48,16 @@ struct experiment: View {
                 Spacer()
             }
             
-            Text("XXXXXXXXXXXXXXXXXXCONTENTXXXXXXXXXXXXXXXXXX")
-                .font(.caption)
+            HStack {
+                Text("XXXXXXXXXXXXXXXXXXCONTENTXXXXXXXXXXXXXX")
+                    .font(.caption)
+                Spacer()
+            }
+            .padding(.top, 5)
         }
     .padding(self.screenSize.width * 0.05)
         .overlay(Rectangle().stroke().foregroundColor(Color.black).padding(self.screenSize.width * 0.02))
+        .frame(maxHeight: self.screenSize.height * 0.15)
     }
 }
 
