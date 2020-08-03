@@ -65,15 +65,24 @@ struct experiment: View {
                 .padding(.top, 5)
                 .frame(maxHeight: unfold ? self.screenSize.height * 0.45 : self.screenSize.height * 0.15)
                     //8.2. this part act really strange on iphone 11.
-                if unfold {
-                    HStack {
+                    // content part dosen't go on top, the Spacer() can't solve the problem
+                
+                
+                HStack {
+                    if unfold {
                         Spacer()
-                        Image(systemName: "hand.thumbsup")
-                        .padding()
+                        Group {
+                            Image(systemName: "hand.thumbsup")
+                            Image(systemName: "star")
+                            Image(systemName: "text.bubble")
+                        }
+                        .padding(.vertical)
+                        .padding(.trailing)
+                    } else {
+                        EmptyView()
                     }
-                } else {
-                    EmptyView()
                 }
+                .animation(Animation.easeInOut(duration: 0.2).delay(unfold ? 0.5 : 0))//nice animation
                 
             }
         }
@@ -87,8 +96,7 @@ struct experiment: View {
                 self.unfold = true
             }
         }
-        .animation(.easeInOut)
-    }
+        .animation(Animation.easeInOut(duration: 0.5).delay(unfold ? 0 : 0.2))    }
 }
 
 struct experiment_Previews: PreviewProvider {
@@ -96,3 +104,5 @@ struct experiment_Previews: PreviewProvider {
         experiment()
     }
 }
+
+//MARK: - need words limits
