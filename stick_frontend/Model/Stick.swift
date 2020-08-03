@@ -8,15 +8,28 @@
 
 import Foundation
 
-struct stick{
-    let Stick_id: UUID
-    let Creat_at: String
-    let End_at: String
-    var Is_ano: Bool
-    var Thumb: Int
-    let Location: String
-    var Content: String
-    let User_id: Int
-    
+struct stickApp {
+
+    private(set) var sticks: Array<stick>
+
+    struct stick{
+        let Stick_id: UUID
+        let Creat_at: String
+        let End_at: String
+        var Is_ano: Bool
+        var Thumb: Int
+        let Location: String
+        var Content: String
+        let User_id: Int
+        
+    }
+
+//    init() {
+//        sticks = Array<stick>()
+//        for stickIndex in 0 ..< 20 {
+//            let body:URLResponse =
+//            
+//        }
+//    }
 }
 
