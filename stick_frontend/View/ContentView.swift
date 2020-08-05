@@ -24,7 +24,7 @@ struct ContentView: View {
 //
 //                }
 //            }
-            Text("List")
+            BrowseView()
                 //MARK: - Next step is creat model of sticks array, creat the list view here with Foreach(), finish the stickify, implement the infinite scroll function
             .font(.title)
             .tabItem {

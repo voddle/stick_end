@@ -12,7 +12,7 @@ struct Stickify: View {
     
           let screenSize: CGRect = UIScreen.main.bounds
           
-          @State private var unfold: Bool = false
+          @State private var unfold: Bool = true
           
           @State private var comment: String = ""
           
@@ -35,7 +35,10 @@ struct Stickify: View {
                                             Text("Profile")
                                                 .font(.caption)
                                         }
-                                        Spacer()
+                                        ZStack {
+                                            Color(.white).opacity(0.001)
+                                            Spacer()
+                                        }.frame(maxHeight: self.screenSize.height * 0.05)
                                             Group{
                                                 VStack (alignment: .trailing){
                                                     
@@ -71,7 +74,7 @@ struct Stickify: View {
                                             .padding(.top, 5)
                                             .frame(maxHeight: unfold ? nil : self.screenSize.height * 0.15)
                                                 //8.2. this part act really strange on iphone 11.
-                                                .animation(Animation.linear(duration: unfold ? 0.1 : 0.05).delay(unfold ? 0.1 : 0))
+                                                .animation(Animation.linear(duration: 0).delay(unfold ? 0.5 : 0))
                                             
                                             
                                             Group {
@@ -79,7 +82,7 @@ struct Stickify: View {
                                             VStack {
                                                 
                                                 HStack {
-                                                    Text("Comments").bold().padding(.leading, self.screenSize.width * 0.01)
+                                                    Text("Comments").font(.callout).bold().padding(.leading, self.screenSize.width * 0.01)
                                                     Spacer()
                                                 }
                                                 
@@ -108,6 +111,7 @@ struct Stickify: View {
                                                     EmptyView()
                                                 }
                                             }
+                                            .animation(Animation.easeInOut(duration: 0).delay(unfold ? 0.35 : 0))
                                             
                                             
                                             Spacer()
@@ -119,8 +123,8 @@ struct Stickify: View {
                                                 HStack {
                                                     if unfold {
                                                         Group {
-                                                            TextField("comment", text: $comment)
-                                                                .overlay(Rectangle().stroke().foregroundColor(Color.black))
+                                                            TextField("", text: $comment)
+                                                                .overlay(Rectangle().stroke().foregroundColor(Color.black).padding(.vertical, self.screenSize.height * 0.001))
                                                                 .padding(.horizontal)
                                                         }
                                                         .padding(.vertical)
@@ -131,14 +135,15 @@ struct Stickify: View {
                                                             Image(systemName: "star")
                                                             Image(systemName: "text.bubble")
                                                         }
-                                                        .padding(.vertical)
+                                                        .font(.callout)
+                                                        .padding(.vertical,self.screenSize.height * 0.001)
                                                         .padding(.trailing)
                                                     } else {
                                                         EmptyView()
                                                     }
                                                 }
                                         .padding(0)
-                                                .animation(Animation.easeInOut(duration: 0.1).delay(unfold ? 0.3 : 0))
+                                                .animation(Animation.easeInOut(duration: 0.1).delay(unfold ? 0.35 : 0))
                                     }
                                 }
           
@@ -152,7 +157,7 @@ struct Stickify: View {
                           self.unfold = true
                       }
                   }
-                  .animation(Animation.easeInOut(duration: 0.3).delay(unfold ? 0 : 0.1))
+                  .animation(Animation.easeInOut(duration: 0.35).delay(unfold ? 0 : 0.2))
               }
 }
 

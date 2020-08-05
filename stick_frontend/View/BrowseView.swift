@@ -10,9 +10,15 @@ import SwiftUI
 
 struct BrowseView: View {
     var body: some View {
-        List {
+        ScrollView {
             Stickify()
-        }
+            Stickify()
+            Stickify()
+            Stickify()
+            Stickify()
+            Stickify()
+            Stickify()
+        }.animation(Animation.easeInOut(duration: 0.1))
     }
 }
 
