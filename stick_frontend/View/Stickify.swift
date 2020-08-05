@@ -12,7 +12,9 @@ struct Stickify: View {
     
           let screenSize: CGRect = UIScreen.main.bounds
           
-          @State private var unfold: Bool = true
+          @Binding var Choosen: Bool
+
+          @State private var unfold: Bool = false
           
           @State private var comment: String = ""
           
@@ -35,10 +37,7 @@ struct Stickify: View {
                                             Text("Profile")
                                                 .font(.caption)
                                         }
-                                        ZStack {
-                                            Color(.white).opacity(0.001)
                                             Spacer()
-                                        }.frame(maxHeight: self.screenSize.height * 0.05)
                                             Group{
                                                 VStack (alignment: .trailing){
                                                     
@@ -51,9 +50,23 @@ struct Stickify: View {
                                                         .lineLimit(1)
                                                         .minimumScaleFactor(0.5)
                                                 }
+                                            }.padding(.trailing, self.screenSize.width * 0.01)
+                                        Group {
+                                        if unfold {
+                                                Image(systemName: "square.and.arrow.up")
+                                                    .font(.caption)
+                                                    .padding(.trailing, self.screenSize.width * 0.02)
+                                                    .onTapGesture {
+                                                        self.unfold = false
+                                                }
+                                            } else {
+                                                EmptyView()
                                             }
+                                        }
+                                        .animation(Animation.easeInOut(duration: 0).delay(unfold ? 0.4 : 0))
                                             //.padding(.leading, self.screenSize.width * 0.4)
                                         }
+                                    .contentShape(Rectangle())
                                     }
                                     HStack {
                                         Text("#TAG#TAG#TAG")
@@ -152,17 +165,15 @@ struct Stickify: View {
                   .frame(maxHeight: unfold ? self.screenSize.height * 0.6 : self.screenSize.height * 0.15)
                   .onTapGesture {
                       if self.unfold {
-                          self.unfold = false
+                          
                       } else {
-                          self.unfold = true
+                        self.unfold = true
                       }
                   }
                   .animation(Animation.easeInOut(duration: 0.35).delay(unfold ? 0 : 0.2))
               }
 }
 
-struct Stickify_Previews: PreviewProvider {
-    static var previews: some View {
-        Stickify()
-    }
-}
+//MARK: - Cloud use an @State varible in browse view to control the fold of stick, and also add scale effect of other stick, the problem is the VStack and List, how to implement infinite scroll view, how to require stick content, how to sent comment, and how to post stick, need to make a list of those problem.
+
+//MARK: -Need add some paremeters in Stickify
