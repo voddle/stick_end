@@ -12,7 +12,7 @@ struct Stickify: View {
     
           let screenSize: CGRect = UIScreen.main.bounds
           
-          @State private var unfold: Bool = true
+          @State private var unfold: Bool = false
           
           @State private var comment: String = ""
           
@@ -73,6 +73,9 @@ struct Stickify: View {
                                                 //8.2. this part act really strange on iphone 11.
                                                 .animation(Animation.linear(duration: unfold ? 0.1 : 0.05).delay(unfold ? 0.1 : 0))
                                             
+                                            
+                                            Group {
+                                                if unfold {
                                             VStack {
                                                 
                                                 HStack {
@@ -87,7 +90,7 @@ struct Stickify: View {
                                                         Text("XXXXXXXXXXCOMMENTXXXXXXXXX").font(.caption)
                                                         Spacer()
                                                         
-                                                    }
+                                                    }.padding(.bottom, self.screenSize.height * 0.01)
                                                 }
                                                 
                                                 Group {
@@ -97,10 +100,14 @@ struct Stickify: View {
                                                         Text("XXXXXXXXXXCOMMENTXXXXXXXXX").font(.caption)
                                                         Spacer()
                                                         
-                                                    }
+                                                    }.padding(.bottom, self.screenSize.height * 0.01)
                                                 } //demo of comment
                                                     //MARK: - this part should implement with ForEach to get all the comment
                                             }.padding(.top)
+                                                } else {
+                                                    EmptyView()
+                                                }
+                                            }
                                             
                                             
                                             Spacer()
