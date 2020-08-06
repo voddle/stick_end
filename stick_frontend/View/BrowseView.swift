@@ -21,7 +21,7 @@ struct BrowseView: View {
                     .padding(.horizontal)
                 Spacer()
             }
-            ScrollView {
+            List {
                 Stickify(Choosen: $choose)
             }.animation(Animation.easeInOut(duration: 0.1))
         }

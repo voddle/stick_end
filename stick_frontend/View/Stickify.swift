@@ -176,4 +176,6 @@ struct Stickify: View {
 
 //MARK: - Cloud use an @State varible in browse view to control the fold of stick, and also add scale effect of other stick, the problem is the VStack and List, how to implement infinite scroll view, how to require stick content, how to sent comment, and how to post stick, need to make a list of those problem.
 
-//MARK: -Need add some paremeters in Stickify
+//MARK: - Need add some paremeters in Stickify
+
+//MARK: - Creat a animatable data to adjust the animation to achieve smooth animation in List
