@@ -10,6 +10,8 @@ import SwiftUI
 
 struct Stickify: View {
     
+    @ObservedObject var Net: Network
+    
           let screenSize: CGRect = UIScreen.main.bounds
           
           @Binding var Choosen: Bool
@@ -17,6 +19,8 @@ struct Stickify: View {
           @State private var unfold: Bool = false
           
           @State private var comment: String = ""
+    
+    @State private var Content: String = ""
           
           
           var body: some View {
@@ -163,7 +167,7 @@ struct Stickify: View {
               .padding(self.screenSize.width * 0.03)
                   .overlay(Rectangle().stroke(lineWidth: 2).foregroundColor(Color.black).padding(self.screenSize.width * 0.02))
                   .frame(height: unfold ? self.screenSize.height * 0.6 : self.screenSize.height * 0.15)
-                    .padding(.vertical, self.screenSize.height * 0.005)
+                    .padding(.vertical, self.screenSize.height * 0.003)
                   .onTapGesture {
                       if self.unfold {
                           
@@ -172,6 +176,7 @@ struct Stickify: View {
                       }
                   }
                   .animation(.spring())
+                  
 //                  .animation(Animation.easeInOut(duration: 0.35).delay(unfold ? 0 : 0.2))
               }
 }
@@ -181,3 +186,9 @@ struct Stickify: View {
 //MARK: - Need add some paremeters in Stickify
 
 //MARK: - Creat a animatable data to adjust the animation to achieve smooth animation in List
+
+struct Stickify_Previews: PreviewProvider {
+    static var previews: some View {
+        /*@START_MENU_TOKEN@*/Text("Hello, World!")/*@END_MENU_TOKEN@*/
+    }
+}

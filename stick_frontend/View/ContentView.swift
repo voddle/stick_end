@@ -29,8 +29,8 @@ struct ContentView: View {
             .font(.title)
             .tabItem {
                 VStack {
-                    Image(systemName: "keyboard")
-                    Text("Third")
+                    Image(systemName: "magnifyingglass")
+                    Text("Discover")
                 }
             }
             .tag(0)

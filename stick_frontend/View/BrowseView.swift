@@ -19,18 +19,24 @@ struct BrowseView: View {
                     .font(.title)
                     .bold()
                     .padding(.horizontal)
+                    .padding(.top)
+                    
                 Spacer()
+                Image(systemName: "square")
+                    .font(.title)
+                    .padding(.horizontal)
+                    .padding(.top)
             }
             ScrollView {
-                Stickify(Choosen: $choose)
-                Stickify(Choosen: $choose)
-                Stickify(Choosen: $choose)
-                Stickify(Choosen: $choose)
-                Stickify(Choosen: $choose)
-                Stickify(Choosen: $choose)
-                Stickify(Choosen: $choose)
-                Stickify(Choosen: $choose)
-                Stickify(Choosen: $choose)
+                Stickify(Net: Network(), Choosen: $choose)
+                Stickify(Net: Network(), Choosen: $choose)
+                Stickify(Net: Network(), Choosen: $choose)
+                Stickify(Net: Network(), Choosen: $choose)
+                Stickify(Net: Network(), Choosen: $choose)
+                Stickify(Net: Network(), Choosen: $choose)
+                Stickify(Net: Network(), Choosen: $choose)
+                Stickify(Net: Network(), Choosen: $choose)
+                Stickify(Net: Network(), Choosen: $choose)
             }.animation(Animation.easeInOut(duration: 0.1))
         }
     }
