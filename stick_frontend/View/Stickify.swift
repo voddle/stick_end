@@ -57,7 +57,7 @@ struct Stickify: View {
                                                     .font(.caption)
                                                     .padding(.trailing, self.screenSize.width * 0.02)
                                                     .onTapGesture {
-                                                        self.unfold = false
+                                                        self.unfold.toggle()
                                                 }
                                             } else {
                                                 EmptyView()
@@ -87,7 +87,7 @@ struct Stickify: View {
                                             .padding(.top, 5)
                                             .frame(maxHeight: unfold ? nil : self.screenSize.height * 0.15)
                                                 //8.2. this part act really strange on iphone 11.
-                                                .animation(Animation.linear(duration: 0).delay(unfold ? 0.5 : 0))
+                                                .animation(Animation.linear(duration: 0).delay(unfold ? 0.4 : 0))
                                             
                                             
                                             Group {
@@ -124,7 +124,7 @@ struct Stickify: View {
                                                     EmptyView()
                                                 }
                                             }
-                                            .animation(Animation.easeInOut(duration: 0).delay(unfold ? 0.35 : 0))
+                                            .animation(Animation.easeInOut(duration: 0).delay(unfold ? 0.2 : 0))
                                             
                                             
                                             Spacer()
@@ -156,21 +156,23 @@ struct Stickify: View {
                                                     }
                                                 }
                                         .padding(0)
-                                                .animation(Animation.easeInOut(duration: 0.1).delay(unfold ? 0.35 : 0))
+                                                //.animation(Animation.easeInOut(duration: 0.1).delay(unfold ? 0.35 : 0))
                                     }
                                 }
           
               .padding(self.screenSize.width * 0.03)
                   .overlay(Rectangle().stroke(lineWidth: 2).foregroundColor(Color.black).padding(self.screenSize.width * 0.02))
-                  .frame(maxHeight: unfold ? self.screenSize.height * 0.6 : self.screenSize.height * 0.15)
+                  .frame(height: unfold ? self.screenSize.height * 0.6 : self.screenSize.height * 0.15)
+                    .padding(.vertical, self.screenSize.height * 0.005)
                   .onTapGesture {
                       if self.unfold {
                           
                       } else {
-                        self.unfold = true
+                        self.unfold.toggle()
                       }
                   }
-                  .animation(Animation.easeInOut(duration: 0.35).delay(unfold ? 0 : 0.2))
+                  .animation(.spring())
+//                  .animation(Animation.easeInOut(duration: 0.35).delay(unfold ? 0 : 0.2))
               }
 }
 
