@@ -18,15 +18,15 @@ struct LoginView: View {
     var body: some View {
         ZStack {
             /*NavigationView {
-               NavigationLink(destination: SignupView(Net: Network())) {
-                  Text("Press on me")
-               }.buttonStyle(PlainButtonStyle())
-            }*/
+             NavigationLink(destination: SignupView(Net: Network())) {
+             Text("Press on me")
+             }.buttonStyle(PlainButtonStyle())
+             }*/
             
             VStack {
                 Text("Stick")
                     .font(.largeTitle)
-                .bold()
+                    .bold()
                     .padding(.top, 120)
                 Spacer()
             }
@@ -39,9 +39,9 @@ struct LoginView: View {
                     Spacer()
                 }
                 TextField(" E-mail", text: $Email)
-                .padding(3)
+                    .padding(3)
                     .overlay(Rectangle().stroke().foregroundColor(Color.black))
-                .padding(.horizontal, 30).autocapitalization(UITextAutocapitalizationType.none)
+                    .padding(.horizontal, 30).autocapitalization(UITextAutocapitalizationType.none)
                 
                 HStack {
                     Text("Password")
@@ -54,16 +54,16 @@ struct LoginView: View {
                 TextField(" Password", text: $Password)
                     .padding(3)
                     .overlay(Rectangle().stroke().foregroundColor(Color.black))
-                .padding(.horizontal, 30).autocapitalization(UITextAutocapitalizationType.none)
+                    .padding(.horizontal, 30).autocapitalization(UITextAutocapitalizationType.none)
                     .padding(.bottom, 30)
                 
                 HStack {
                     Spacer()
-                Button (action: {
-                    self.user.login(self.Email, self.Password)
-                }, label: {Text("Login").bold()})
-                .padding(5)
-                .foregroundColor(Color.white)
+                    Button (action: {
+                        self.user.login(self.Email, self.Password)
+                    }, label: {Text("Login").bold()})
+                    .padding(5)
+                    .foregroundColor(Color.white)
                     .background(Rectangle())
                     .padding(.horizontal, 30)
                 }
@@ -74,11 +74,11 @@ struct LoginView: View {
                 Button (action: {
                     self.condition.signup()
                 }, label: {Text("Signup")})
-                    .padding(5)
-                    .foregroundColor(Color.white)
-                        .background(Rectangle())
-                    .opacity(0.9)
-                    .padding(.top, 50)
+                .padding(5)
+                .foregroundColor(Color.white)
+                .background(Rectangle())
+                .opacity(0.9)
+                .padding(.top, 50)
             }
             .padding(.top)
             

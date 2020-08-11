@@ -18,22 +18,22 @@ struct ContentView: View {
     var body: some View {
         
         TabView(selection: $selection){
-            Text("First View")
+            SignupView(condition: condition, user: user)
                 .font(.title)
                 .tabItem {
                     VStack {
                         Image("first")
-                        Text("First")
+                        
                     }
                 }
                 .tag(0)
 
-            Text("Second View")
+            LoginView(condition: condition, user: user)
                 .font(.title)
                 .tabItem {
                     VStack {
                         Image("second")
-                        Text("Second")
+                        
                     }
                 }
                 .tag(1)
