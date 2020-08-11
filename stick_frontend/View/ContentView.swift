@@ -18,35 +18,22 @@ struct ContentView: View {
     var body: some View {
         
         TabView(selection: $selection){
-            SignupView(condition: condition, user: user)
-                .font(.title)
-                .tabItem {
-                    VStack {
-                        Image("first")
-                        
-                    }
-                }
-                .tag(0)
 
-            LoginView(condition: condition, user: user)
-                .font(.title)
-                .tabItem {
-                    VStack {
-                        Image("second")
-                        
-                    }
-                }
-                .tag(1)
-
-            Text("Third View")
+//            List {
+//                ForEach () { item in
+//
+//                }
+//            }
+            BrowseView()
+                //MARK: - Next step is creat model of sticks array, creat the list view here with Foreach(), finish the stickify, implement the infinite scroll function
             .font(.title)
             .tabItem {
                 VStack {
-                    Image(systemName: "keyboard")
-                    Text("Third")
+                    Image(systemName: "magnifyingglass")
+                    Text("Discover")
                 }
             }
-            .tag(2)
+            .tag(0)
 
             ProfileView(condition: self.condition, user: self.user)
             .font(.title)
@@ -56,7 +43,7 @@ struct ContentView: View {
                     Text("Profile")
                 }
             }
-            .tag(2)
+            .tag(1)
         }
     }
 }

@@ -13,6 +13,8 @@ struct ProfileView: View {
     @ObservedObject var condition: ViewCondition
     @ObservedObject var user: User
     
+    @State private var choose: Bool = false
+
     
     var body: some View {
         
@@ -29,43 +31,25 @@ struct ProfileView: View {
                 .padding()
             }
             
-            List {
-                Text("something")
-                .font(.title)
-                .bold()
-                    .padding(.horizontal, 5)
-                    .background(RoundedRectangle(cornerRadius: 10).zIndex(-1).foregroundColor(Color.gray))
-                Text("something")
-                .font(.title)
-                .bold()
-                    .padding(.horizontal, 5)
-                    .background(RoundedRectangle(cornerRadius: 10).zIndex(-1).foregroundColor(Color.gray))
-                Text("something")
-                .font(.title)
-                .bold()
-                    .padding(.horizontal, 5)
-                    .background(RoundedRectangle(cornerRadius: 10).zIndex(-1).foregroundColor(Color.gray))
-                Text("something")
-                .font(.title)
-                .bold()
-                    .padding(.horizontal, 5)
-                    .background(RoundedRectangle(cornerRadius: 10).zIndex(-1).foregroundColor(Color.gray))
-                Text("something")
-                .font(.title)
-                .bold()
-                    .padding(.horizontal, 5)
-                    .background(RoundedRectangle(cornerRadius: 10).zIndex(-1).foregroundColor(Color.gray))
-            }
-        
-            .listStyle(PlainListStyle())
+            ScrollView {
+                Stickify(Net: Network(), Choosen: $choose)
+                Stickify(Net: Network(), Choosen: $choose)
+                Stickify(Net: Network(), Choosen: $choose)
+                Stickify(Net: Network(), Choosen: $choose)
+                Stickify(Net: Network(), Choosen: $choose)
+                Stickify(Net: Network(), Choosen: $choose)
+                Stickify(Net: Network(), Choosen: $choose)
+                Stickify(Net: Network(), Choosen: $choose)
+                Stickify(Net: Network(), Choosen: $choose)
+            }.animation(Animation.easeInOut(duration: 0.1))
             
-            Spacer()
+            
             
             HStack {
-                Spacer()
+                Spacer(minLength: 10)
                 Button (action: {
                     self.user.logout()
-                }, label: { Text("Logout").padding(50)})
+                }, label: { Text("Logout").padding(.horizontal).padding(.bottom)})
                     
                     
             }
