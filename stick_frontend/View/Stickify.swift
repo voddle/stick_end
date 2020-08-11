@@ -121,7 +121,57 @@ struct Stickify: View {
                                                         Spacer()
                                                         
                                                     }.padding(.bottom, self.screenSize.height * 0.01)
-                                                } //demo of comment
+                                                }
+                                                
+                                                Group {
+                                                    HStack (alignment: .top){
+                                                        Image(systemName: "person.crop.circle").padding(.leading, self.screenSize.width * 0.01)
+                                                        Text("Username").font(.caption).bold()
+                                                        Text("XXXXXXXXXXCOMMENTXXXXXXXXX").font(.caption)
+                                                        Spacer()
+                                                        
+                                                    }.padding(.bottom, self.screenSize.height * 0.01)
+                                                }
+                                                
+                                                Group {
+                                                    HStack (alignment: .top){
+                                                        Image(systemName: "person.crop.circle").padding(.leading, self.screenSize.width * 0.01)
+                                                        Text("Username").font(.caption).bold()
+                                                        Text("XXXXXXXXXXCOMMENTXXXXXXXXX").font(.caption)
+                                                        Spacer()
+                                                        
+                                                    }.padding(.bottom, self.screenSize.height * 0.01)
+                                                }
+                                                
+                                                Group {
+                                                    HStack (alignment: .top){
+                                                        Image(systemName: "person.crop.circle").padding(.leading, self.screenSize.width * 0.01)
+                                                        Text("Username").font(.caption).bold()
+                                                        Text("XXXXXXXXXXCOMMENTXXXXXXXXX").font(.caption)
+                                                        Spacer()
+                                                        
+                                                    }.padding(.bottom, self.screenSize.height * 0.01)
+                                                }
+                                                
+                                                Group {
+                                                    HStack (alignment: .top){
+                                                        Image(systemName: "person.crop.circle").padding(.leading, self.screenSize.width * 0.01)
+                                                        Text("Username").font(.caption).bold()
+                                                        Text("XXXXXXXXXXCOMMENTXXXXXXXXX").font(.caption)
+                                                        Spacer()
+                                                        
+                                                    }.padding(.bottom, self.screenSize.height * 0.01)
+                                                }
+                                                
+                                                Group {
+                                                    HStack (alignment: .top){
+                                                        Image(systemName: "person.crop.circle").padding(.leading, self.screenSize.width * 0.01)
+                                                        Text("Username").font(.caption).bold()
+                                                        Text("XXXXXXXXXXCOMMENTXXXXXXXXX").font(.caption)
+                                                        Spacer()
+                                                        
+                                                    }.padding(.bottom, self.screenSize.height * 0.01)
+                                                }//demo of comment
                                                     //MARK: - this part should implement with ForEach to get all the comment
                                             }.padding(.top)
                                                 } else {
