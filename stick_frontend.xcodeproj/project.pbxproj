@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		58C5E1AE24E2E4040099A7E1 /* Comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58C5E1AD24E2E4040099A7E1 /* Comment.swift */; };
 		58CDAF2824D5150B002B69A2 /* SignupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58CDAF2724D5150B002B69A2 /* SignupView.swift */; };
 		58CDAF2A24D51529002B69A2 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58CDAF2924D51529002B69A2 /* LoginView.swift */; };
 		58CDAF2C24D5155B002B69A2 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58CDAF2B24D5155B002B69A2 /* ContentView.swift */; };
@@ -32,6 +33,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		58C5E1AD24E2E4040099A7E1 /* Comment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Comment.swift; sourceTree = "<group>"; };
 		58CDAF2724D5150B002B69A2 /* SignupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupView.swift; sourceTree = "<group>"; };
 		58CDAF2924D51529002B69A2 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		58CDAF2B24D5155B002B69A2 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -99,6 +101,7 @@
 				58CDAF3524D51BD9002B69A2 /* Stick.swift */,
 				58CDAF3A24D5433D002B69A2 /* User.swift */,
 				6DA4F53024D5437000A88DC4 /* Tag.swift */,
+				58C5E1AD24E2E4040099A7E1 /* Comment.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -239,6 +242,7 @@
 				58CDAF3924D526BD002B69A2 /* URL.swift in Sources */,
 				58CDAF3F24D54786002B69A2 /* AvatarView.swift in Sources */,
 				58CDAF3124D51ADC002B69A2 /* ViewController.swift in Sources */,
+				58C5E1AE24E2E4040099A7E1 /* Comment.swift in Sources */,
 				6DA4F51924CD4EC900A88DC4 /* Stick_Frontend_Network.swift in Sources */,
 				6DE792C424DABAA5004547C3 /* BrowseView.swift in Sources */,
 				6DA4F50724CD33E500A88DC4 /* SceneDelegate.swift in Sources */,

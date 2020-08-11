@@ -19,3 +19,20 @@ struct USER_API {
     static let AVATAR = CONFIG.HOST + PREFIX + "/avatar"
     static let LOGOUT = CONFIG.HOST + PREFIX + "/logout"
 }
+
+struct STICK_API {
+    static let PREFIX = "/api/stick/sticks"
+    static let GET_STICKS = CONFIG.HOST + STICK_API.PREFIX + ""
+}
+
+struct USER_STICK_API {
+    static let PREFIX = "/api/userstick/users"
+    
+    static func GET_USER_STICKS_BY_ID(user_id: String) -> String {
+        return CONFIG.HOST + USER_STICK_API.PREFIX + "/\(user_id)/sticks"
+    }
+    
+    static func GET_USER_STICKS_BY_USERID_STICKID(user_id: String, stick_id: String) -> String {
+        return CONFIG.HOST + USER_STICK_API.PREFIX + "/\(user_id)/sticks/\(stick_id)"
+    }
+}

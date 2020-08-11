@@ -9,7 +9,11 @@
 import Foundation
 
 struct Tag {
-    let Tag: String
-    let Tag_Id: UUID
+    let Content: String
+    let Tag_id: String
+}
+
+struct TagApp {
+
     let Tags: [Tag]
 }

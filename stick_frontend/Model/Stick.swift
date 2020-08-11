@@ -7,22 +7,49 @@
 //
 
 import Foundation
+import Alamofire
 
-struct stickApp {
+struct Stick{
+    let Stick_id: UUID
+    let Creat_at: String
+    let End_at: String
+    var Is_ano: Bool
+    var Thumb: Int
+    let Location: String
+    var Content: String
+    var user: User  // 创建者的信息
+    var tag: [Tag] // 标签列表
+    var comments: [Comment] // 评论列表
+}
 
-    private(set) var sticks: Array<stick>
-
-    struct stick{
-        let Stick_id: UUID
-        let Creat_at: String
-        let End_at: String
-        var Is_ano: Bool
-        var Thumb: Int
-        let Location: String
-        var Content: String
-        let User_id: Int
+class StickApp: ObservableObject {
+    
+    public var sticks: Array<Stick> = []
+    
+    
+    // 获取全部
+    func getSticks(){
+        var sticks: Array<Stick> = []
+        let request = AF.request(STICK_API.GET_STICKS)
         
+        // TODO: 貌似中文传过来会出现编码的问题，建议修复一下
+        request.responseJSON() { (data) in
+            let res = data.value as! NSDictionary
+            let data = res["data"] as! Array<Stick>
+            
+            sticks = data
+        }
+        print(sticks)
+        self.sticks = sticks
     }
+    
+    init(){
+        self.getSticks()
+    }
+    
+}
+
+
 
 //    init() {
 //        sticks = Array<stick>()
@@ -31,5 +58,5 @@ struct stickApp {
 //            
 //        }
 //    }
-}
+
 

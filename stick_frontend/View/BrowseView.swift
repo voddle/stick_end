@@ -12,6 +12,8 @@ struct BrowseView: View {
     
     @State private var choose: Bool = false
     
+    @State private var sticks: Array<Stick> = []
+    
     var body: some View {
         VStack{
             HStack {
@@ -26,17 +28,14 @@ struct BrowseView: View {
                     .font(.title)
                     .padding(.horizontal)
                     .padding(.top)
+                    .onTapGesture {
+                        sticks.append(contentsOf: StickApp.getSticks())
+                    }
             }
             ScrollView {
-                Stickify(Net: Network(), Choosen: $choose)
-                Stickify(Net: Network(), Choosen: $choose)
-                Stickify(Net: Network(), Choosen: $choose)
-                Stickify(Net: Network(), Choosen: $choose)
-                Stickify(Net: Network(), Choosen: $choose)
-                Stickify(Net: Network(), Choosen: $choose)
-                Stickify(Net: Network(), Choosen: $choose)
-                Stickify(Net: Network(), Choosen: $choose)
-                Stickify(Net: Network(), Choosen: $choose)
+                ForEach (0 ..< sticks.count) {_ in
+                    Stickify(Net: Network(), Choosen: $choose)
+                }
             }.animation(Animation.easeInOut(duration: 0.1))
         }
     }
