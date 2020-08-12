@@ -4,4 +4,5 @@
 * need to add function of http request
 * the Stick post page
 * Stick editing and management
-
+* Should clean up the legacy of Network part code, and fix the new net part code
+  still long way to go ...
