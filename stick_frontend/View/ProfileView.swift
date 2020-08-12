@@ -11,8 +11,7 @@ import SwiftUI
 struct ProfileView: View {
     
     @ObservedObject var condition: ViewCondition
-    @ObservedObject var user: User
-    @ObservedObject var stickApp: StickApp
+    @ObservedObject var StickViewModel: StickMedium
     @State private var choose: Bool = false
     
     
@@ -36,25 +35,12 @@ struct ProfileView: View {
                 // TODO: 动态构造stick, 这里通过stickApp的sticks变量可以得到获取到的所有stick的信息
                 // 遍历每一个sticks中的stick，将这个stick传入Stickify即得到了一个Stick的View，将这个stick的view放在ScrollView中即可
                 // 这里之所以过不了编译是因为我不会写555
-                () -> [Stickify] {
-                    var stickyFy: [Stickify]
-                    
-                    for stick in stickApp.sticks {
-                        
-                    }
-                    
+                
+                
+                ForEach (StickViewModel.Sticks) {Stick in
+                    Stickify(stick: Stick, Choosen: self.$choose)
                 }
                 
-                
-                Stickify(Net: Network(), Choosen: $choose)
-                Stickify(Net: Network(), Choosen: $choose)
-                Stickify(Net: Network(), Choosen: $choose)
-                //                Stickify(Net: Network(), Choosen: $choose)
-                //                Stickify(Net: Network(), Choosen: $choose)
-                //                Stickify(Net: Network(), Choosen: $choose)
-                //                Stickify(Net: Network(), Choosen: $choose)
-                //                Stickify(Net: Network(), Choosen: $choose)
-                //                Stickify(Net: Network(), Choosen: $choose)
             }.animation(Animation.easeInOut(duration: 0.1))
             
             
@@ -62,7 +48,7 @@ struct ProfileView: View {
             HStack {
                 Spacer(minLength: 10)
                 Button (action: {
-                    self.user.logout()
+                    self.StickViewModel.logout()
                 }, label: { Text("Logout").padding(.horizontal).padding(.bottom)})
                 
                 
@@ -74,6 +60,6 @@ struct ProfileView: View {
 
 struct ProfileView_Previews: PreviewProvider {
     static var previews: some View {
-        ProfileView(condition: ViewCondition(), user: User())
+        ProfileView(condition: ViewCondition(), StickViewModel: StickMedium())
     }
 }

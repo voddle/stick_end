@@ -13,8 +13,7 @@ struct Stickify: View {
     // 这里我把stickify的构造改成了下面
     // 直接传入一个State变量stick, 为Stick类型, 包含stick的信息(创建者, 内容，位置，评论等等)。
     // 在构造这个stick的时候直接访问stick的属性即可(stick.Content, stick.User.Username blabla)
-    @State private var stick: Stick
-    
+    @State var stick: StickApp.Stick  //命名错误，已经改了
     
     let screenSize: CGRect = UIScreen.main.bounds
     

@@ -14,6 +14,5 @@ struct Tag {
 }
 
 struct TagApp {
-
     let Tags: [Tag]
 }

@@ -9,26 +9,28 @@
 import Foundation
 import Alamofire
 
-struct Stick{
-    let Stick_id: UUID
-    let Creat_at: String
-    let End_at: String
-    var Is_ano: Bool
-    var Thumb: Int
-    let Location: String
-    var Content: String
-    var user: User  // 创建者的信息
-    var tag: [Tag] // 标签列表
-    var comments: [Comment] // 评论列表
+
+struct StickApp {
+
+    struct Stick: Identifiable{
+        var id: UUID
+        let Creat_at: String
+        let End_at: String
+        var Is_ano: Bool
+        var Thumb: Int
+        let Location: String
+        var Content: String
+        var user: User  // 创建者的信息
+        var tag: [Tag] // 标签列表
+        var comments: [Comment] // 评论列表
 }
 
-class StickApp: ObservableObject {
     
-    public var sticks: Array<Stick> = []
+    private(set) var sticks: Array<Stick>
     
     
     // 获取全部
-    func getSticks(){
+    mutating func getSticks(){
         var sticks: Array<Stick> = []
         let request = AF.request(STICK_API.GET_STICKS)
         
@@ -40,11 +42,12 @@ class StickApp: ObservableObject {
             sticks = data
         }
         print(sticks)
-        self.sticks = sticks
+        self.sticks.append(contentsOf: sticks)
     }
     
     init(){
-        self.getSticks()
+        sticks = Array<Stick>()
+        getSticks()
     }
     
 }

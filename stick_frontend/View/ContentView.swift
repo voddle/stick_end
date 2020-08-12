@@ -11,7 +11,7 @@ import SwiftUI
 struct ContentView: View {
     
     @ObservedObject var condition: ViewCondition
-    @ObservedObject var user: User
+    @ObservedObject var StickViewModel: StickMedium
     
     @State private var selection = 0
  
@@ -24,7 +24,7 @@ struct ContentView: View {
 //
 //                }
 //            }
-            BrowseView()
+            BrowseView(StickViewModel: StickViewModel)
                 //MARK: - Next step is creat model of sticks array, creat the list view here with Foreach(), finish the stickify, implement the infinite scroll function
             .font(.title)
             .tabItem {
@@ -35,7 +35,7 @@ struct ContentView: View {
             }
             .tag(0)
 
-            ProfileView(condition: self.condition, user: self.user)
+            ProfileView(condition: condition, StickViewModel: StickViewModel)
             .font(.title)
             .tabItem {
                 VStack {
@@ -50,7 +50,7 @@ struct ContentView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView(condition: ViewCondition(), user: User())
+        ContentView(condition: ViewCondition(), StickViewModel: StickMedium())
     }
 }
 

@@ -11,7 +11,7 @@ import SwiftUI
 struct LoginView: View {
     @ObservedObject var condition: ViewCondition
     
-    @ObservedObject var user: User
+    @ObservedObject var StickViewModel: StickMedium
     @State private var Email: String = ""
     @State private var Password: String = ""
     
@@ -60,7 +60,7 @@ struct LoginView: View {
                 HStack {
                     Spacer()
                     Button (action: {
-                        self.user.login(self.Email, self.Password)
+                        self.StickViewModel.login(email: self.Email, password: self.Password)
                     }, label: {Text("Login").bold()})
                     .padding(5)
                     .foregroundColor(Color.white)
@@ -92,7 +92,7 @@ struct LoginView: View {
 
 struct LoginView_Previews: PreviewProvider {
     static var previews: some View {
-        LoginView(condition: ViewCondition(), user: User())
+        LoginView(condition: ViewCondition(), StickViewModel: StickMedium())
     }
 }
 

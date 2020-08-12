@@ -12,7 +12,7 @@ struct SignupView: View {
     
     @ObservedObject var condition: ViewCondition
     
-    @ObservedObject var user: User
+    @ObservedObject var StickViewModel: StickMedium
     
     @State private var Email: String = ""
     @State private var Username: String = ""
@@ -74,7 +74,7 @@ struct SignupView: View {
                 HStack {
                     Spacer()
                 Button (action: {
-                    self.user.register(self.Email, self.Username, self.Password)
+                    self.StickViewModel.register(username: self.Email, email: self.Username, password: self.Password)
                 }, label: {Text("Signup")                        .bold()
                     })
                     
@@ -114,7 +114,7 @@ struct SignupView: View {
 
 struct SignupView_Previews: PreviewProvider {
     static var previews: some View {
-        SignupView(condition: ViewCondition(), user: User())
+        SignupView(condition: ViewCondition(), StickViewModel: StickMedium())
     }
 }
 

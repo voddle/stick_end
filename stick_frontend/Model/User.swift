@@ -9,7 +9,8 @@
 import Foundation
 import Alamofire
 
-class User: ObservableObject {
+class User {
+    
     var User_id: Int = 0
     var Username: String = ""
     var Password: String = ""
@@ -18,7 +19,7 @@ class User: ObservableObject {
     var Avatar: String = ""
     
     
-    func login (_ email: String, _ password: String){
+     func login (_ email: String, _ password: String){
         if self.Token == "" {
             AF.request(USER_API.LOGIN, method: .post, parameters: ["email":email, "password":password], encoder: JSONParameterEncoder.default).responseJSON {
                 response in
@@ -37,7 +38,10 @@ class User: ObservableObject {
         }
     }
     
-    func register(_ username: String, _ email: String, _ password: String) {
+     func register(_ username: String, _ email: String, _ password: String) {
+        
+        
+        
         if self.Token == "" {
             AF.request(USER_API.REGISTER, method: .post, parameters: ["username": username, "email":email, "password":password], encoder: JSONParameterEncoder.default).responseJSON {
                 response in
@@ -56,7 +60,7 @@ class User: ObservableObject {
         }
     }
     
-    func logout() {
+     func logout() {
         self.Token = ""
     }
 }

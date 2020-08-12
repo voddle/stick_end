@@ -30,6 +30,7 @@
 		6DA4F53524D5668F00A88DC4 /* Stickify.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DA4F53424D5668F00A88DC4 /* Stickify.swift */; };
 		6DB2F51F24D9327A00E3DB02 /* scroll.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DB2F51E24D9327A00E3DB02 /* scroll.swift */; };
 		6DE792C424DABAA5004547C3 /* BrowseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DE792C324DABAA5004547C3 /* BrowseView.swift */; };
+		6DE792EA24E3E9D5004547C3 /* StickMedium.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DE792E924E3E9D5004547C3 /* StickMedium.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -56,6 +57,7 @@
 		6DA4F53424D5668F00A88DC4 /* Stickify.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stickify.swift; sourceTree = "<group>"; };
 		6DB2F51E24D9327A00E3DB02 /* scroll.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = scroll.swift; sourceTree = "<group>"; };
 		6DE792C324DABAA5004547C3 /* BrowseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrowseView.swift; sourceTree = "<group>"; };
+		6DE792E924E3E9D5004547C3 /* StickMedium.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StickMedium.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -133,6 +135,7 @@
 		6DA4F50324CD33E500A88DC4 /* stick_frontend */ = {
 			isa = PBXGroup;
 			children = (
+				6DE792E824E3E99D004547C3 /* ViewModel */,
 				58CDAF3724D526A4002B69A2 /* Config */,
 				58CDAF3424D51BCA002B69A2 /* Model */,
 				58CDAF2F24D516F8002B69A2 /* ViewController */,
@@ -154,6 +157,14 @@
 				6DA4F50D24CD33E700A88DC4 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		6DE792E824E3E99D004547C3 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				6DE792E924E3E9D5004547C3 /* StickMedium.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -253,6 +264,7 @@
 				58CDAF3624D51BD9002B69A2 /* Stick.swift in Sources */,
 				6DA4F53524D5668F00A88DC4 /* Stickify.swift in Sources */,
 				58CDAF2824D5150B002B69A2 /* SignupView.swift in Sources */,
+				6DE792EA24E3E9D5004547C3 /* StickMedium.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

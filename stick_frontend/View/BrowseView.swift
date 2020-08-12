@@ -10,9 +10,9 @@ import SwiftUI
 
 struct BrowseView: View {
     
-    @State private var choose: Bool = false
+    @ObservedObject var StickViewModel: StickMedium
     
-    @State private var sticks: Array<Stick> = []
+    @State private var choose: Bool = false
     
     var body: some View {
         VStack{
@@ -29,12 +29,12 @@ struct BrowseView: View {
                     .padding(.horizontal)
                     .padding(.top)
                     .onTapGesture {
-                        sticks.append(contentsOf: StickApp.getSticks())
+                        self.StickViewModel.loadSticks()
                     }
             }
             ScrollView {
-                ForEach (0 ..< sticks.count) {_ in
-                    Stickify(Net: Network(), Choosen: $choose)
+                ForEach (StickViewModel.Sticks) {Stick in
+                    Stickify(stick: Stick, Choosen: self.$choose)
                 }
             }.animation(Animation.easeInOut(duration: 0.1))
         }
@@ -43,7 +43,7 @@ struct BrowseView: View {
 
 struct BrowseView_Previews: PreviewProvider {
     static var previews: some View {
-        BrowseView()
+        BrowseView(StickViewModel: StickMedium())
     }
 }
 
