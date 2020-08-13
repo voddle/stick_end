@@ -14,6 +14,7 @@ struct LoginView: View {
     @ObservedObject var StickViewModel: StickMedium
     @State private var Email: String = ""
     @State private var Password: String = ""
+    @State private var secure: Bool = true
     
     var body: some View {
         ZStack {
@@ -51,11 +52,23 @@ struct LoginView: View {
                     Spacer()
                 }
                 .padding(.top)
-                SecureField(" Password", text: $Password)
-                    .padding(3)
-                    .overlay(Rectangle().stroke().foregroundColor(Color.black))
-                    .padding(.horizontal, 30).autocapitalization(UITextAutocapitalizationType.none)
-                    .padding(.bottom, 30)
+                if secure {
+                    SecureField(" Password", text: $Password)
+                        .padding(3)
+                        .overlay(Rectangle().stroke().foregroundColor(Color.black))
+                        .padding(.horizontal, 30).autocapitalization(UITextAutocapitalizationType.none)
+                        .padding(.bottom, 30)
+                } else {
+                    TextField(" Password", text: $Password)
+                        .padding(3)
+                        .overlay(Rectangle().stroke().foregroundColor(Color.black))
+                        .padding(.horizontal, 30).autocapitalization(UITextAutocapitalizationType.none)
+                        .padding(.bottom, 30)
+                }
+                Image(systemName: "eye").onTapGesture {
+                    self.secure.toggle()
+                }
+                    
                 
                 HStack {
                     Spacer()
