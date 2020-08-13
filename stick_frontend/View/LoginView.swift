@@ -42,7 +42,9 @@ struct LoginView: View {
                 TextField(" E-mail", text: $Email)
                     .padding(3)
                     .overlay(Rectangle().stroke().foregroundColor(Color.black))
-                    .padding(.horizontal, 30).autocapitalization(UITextAutocapitalizationType.none)
+                    .padding(.horizontal, 30)
+                    .padding(.trailing, 50)
+                    .autocapitalization(UITextAutocapitalizationType.none)
                 
                 HStack {
                     Text("Password")
@@ -52,21 +54,36 @@ struct LoginView: View {
                     Spacer()
                 }
                 .padding(.top)
-                if secure {
-                    SecureField(" Password", text: $Password)
-                        .padding(3)
-                        .overlay(Rectangle().stroke().foregroundColor(Color.black))
-                        .padding(.horizontal, 30).autocapitalization(UITextAutocapitalizationType.none)
-                        .padding(.bottom, 30)
-                } else {
-                    TextField(" Password", text: $Password)
-                        .padding(3)
-                        .overlay(Rectangle().stroke().foregroundColor(Color.black))
-                        .padding(.horizontal, 30).autocapitalization(UITextAutocapitalizationType.none)
-                        .padding(.bottom, 30)
-                }
-                Image(systemName: "eye").onTapGesture {
-                    self.secure.toggle()
+                
+                HStack {
+                    if secure {
+                        SecureField(" Password", text: $Password)
+                            .padding(3)
+                            .overlay(Rectangle().stroke().foregroundColor(Color.black))
+                            .padding(.leading, 30)
+                            .padding(.trailing, 17)
+                            .autocapitalization(UITextAutocapitalizationType.none)
+                            .padding(.bottom, 30)
+                        
+                    } else {
+                        TextField(" Password", text: $Password)
+                            .padding(3)
+                            .overlay(Rectangle().stroke().foregroundColor(Color.black))
+                            .padding(.leading, 30)
+                            .padding(.trailing, 17)
+                            .autocapitalization(UITextAutocapitalizationType.none)
+                            .padding(.bottom, 30)
+                    }
+                    Button (action: {
+                        self.secure.toggle()
+                    }) {
+                        if secure{
+                            Image(systemName: "eye")
+                        } else {
+                            Image(systemName: "eye.fill")
+                        }
+                    }.padding(.bottom, 30)
+                        .padding(.trailing, 30)
                 }
                     
                 
