@@ -13,7 +13,7 @@ import Alamofire
 struct StickApp {
 
     struct Stick: Identifiable{
-        var id: UUID
+        var id: UUID //in order to conform the protocol: Identifiable to implement the ForEach on Sticks, the "User_id: was changed to the "id", So as other model
         let Creat_at: String
         let End_at: String
         var Is_ano: Bool

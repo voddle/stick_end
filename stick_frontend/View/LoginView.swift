@@ -99,7 +99,7 @@ struct LoginView: View {
                 }
                 .padding(.top)
                 
-                
+                //需要等待登陆返回信息的状态和动画
                 
                 Button (action: {
                     self.condition.signup()

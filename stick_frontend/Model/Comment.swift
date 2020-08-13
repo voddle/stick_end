@@ -8,8 +8,9 @@
 
 import Foundation
 
-struct Comment {
+struct Comment: Identifiable {
     let commenter: User // 评论者的信息
-    let comment_id: Int
+    let id: UUID// changed from comment_id
     let stick_id: Int
+    let content: String
 }

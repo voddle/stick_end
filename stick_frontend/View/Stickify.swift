@@ -105,76 +105,18 @@ struct Stickify: View {
                                     Text("Comments").font(.callout).bold().padding(.leading, self.screenSize.width * 0.01)
                                     Spacer()
                                 }
-                                
+                                ForEach (stick.comments) {Comment in
                                 Group {
                                     HStack (alignment: .top){
                                         Image(systemName: "person.crop.circle").padding(.leading, self.screenSize.width * 0.01)
                                         Text("Username").font(.caption).bold()
-                                        Text("XXXXXXXXXXCOMMENTXXXXXXXXX").font(.caption)
+                                        Text(Comment.content).font(.caption)
                                         Spacer()
                                         
                                     }.padding(.bottom, self.screenSize.height * 0.01)
                                 }
-                                
-                                Group {
-                                    HStack (alignment: .top){
-                                        Image(systemName: "person.crop.circle").padding(.leading, self.screenSize.width * 0.01)
-                                        Text("Username").font(.caption).bold()
-                                        Text("XXXXXXXXXXCOMMENTXXXXXXXXX").font(.caption)
-                                        Spacer()
-                                        
-                                    }.padding(.bottom, self.screenSize.height * 0.01)
                                 }
-                                
-                                Group {
-                                    HStack (alignment: .top){
-                                        Image(systemName: "person.crop.circle").padding(.leading, self.screenSize.width * 0.01)
-                                        Text("Username").font(.caption).bold()
-                                        Text("XXXXXXXXXXCOMMENTXXXXXXXXX").font(.caption)
-                                        Spacer()
-                                        
-                                    }.padding(.bottom, self.screenSize.height * 0.01)
-                                }
-                                
-                                Group {
-                                    HStack (alignment: .top){
-                                        Image(systemName: "person.crop.circle").padding(.leading, self.screenSize.width * 0.01)
-                                        Text("Username").font(.caption).bold()
-                                        Text("XXXXXXXXXXCOMMENTXXXXXXXXX").font(.caption)
-                                        Spacer()
-                                        
-                                    }.padding(.bottom, self.screenSize.height * 0.01)
-                                }
-                                
-                                Group {
-                                    HStack (alignment: .top){
-                                        Image(systemName: "person.crop.circle").padding(.leading, self.screenSize.width * 0.01)
-                                        Text("Username").font(.caption).bold()
-                                        Text("XXXXXXXXXXCOMMENTXXXXXXXXX").font(.caption)
-                                        Spacer()
-                                        
-                                    }.padding(.bottom, self.screenSize.height * 0.01)
-                                }
-                                
-                                Group {
-                                    HStack (alignment: .top){
-                                        Image(systemName: "person.crop.circle").padding(.leading, self.screenSize.width * 0.01)
-                                        Text("Username").font(.caption).bold()
-                                        Text("XXXXXXXXXXCOMMENTXXXXXXXXX").font(.caption)
-                                        Spacer()
-                                        
-                                    }.padding(.bottom, self.screenSize.height * 0.01)
-                                }
-                                
-                                Group {
-                                    HStack (alignment: .top){
-                                        Image(systemName: "person.crop.circle").padding(.leading, self.screenSize.width * 0.01)
-                                        Text("Username").font(.caption).bold()
-                                        Text("XXXXXXXXXXCOMMENTXXXXXXXXX").font(.caption)
-                                        Spacer()
-                                        
-                                    }.padding(.bottom, self.screenSize.height * 0.01)
-                                }//demo of comment
+                                //demo of comment
                                 //MARK: - this part should implement with ForEach to get all the comment
                             }.padding(.top)
                         } else {
@@ -245,3 +187,11 @@ struct Stickify_Previews: PreviewProvider {
         /*@START_MENU_TOKEN@*/Text("Hello, World!")/*@END_MENU_TOKEN@*/
     }
 }
+
+
+/*　MARK: - Due to the reconstruction of Stick model, the following features were required:
+                1.thumbs count
+                2.thumb function
+                3.comments list ---- completed
+                4.comment function */
+
