@@ -18,6 +18,14 @@ class StickMedium: ObservableObject {
         return Stick.sticks
     }
     
+    var Username: String {
+        return UserModel.Username
+    }
+    
+    var Avatar: String {
+        return UserModel.Avatar
+    }
+    
     func loadSticks() {
         Stick.getSticks()
     }

@@ -21,12 +21,12 @@ struct ProfileView: View {
         
         VStack {
             HStack {
-                Text("Username")
+                Text(StickViewModel.Username)
                     .font(.largeTitle)
                     .bold()
                     .padding()
                 Spacer()
-                Image(systemName: "person.crop.circle") // head image
+                Image(StickViewModel.Avatar) // head image
                     .font(.largeTitle)
                     .padding()
             }
