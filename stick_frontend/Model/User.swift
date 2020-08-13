@@ -9,7 +9,7 @@
 import Foundation
 import Alamofire
 
-class User {
+struct User {
     
     var User_id: Int = 0
     var Username: String = ""
@@ -19,48 +19,100 @@ class User {
     var Avatar: String = ""
     
     
-     func login (_ email: String, _ password: String){
+     mutating func login (_ email: String, _ password: String){
+        
+        var id: Int = 0
+        var name: String = ""
+        var pass: String = ""
+        var email: String = ""
+        var avatar: String = ""
+        var token: String = ""
+        
         if self.Token == "" {
-            AF.request(USER_API.LOGIN, method: .post, parameters: ["email":email, "password":password], encoder: JSONParameterEncoder.default).responseJSON {
+            
+            let request = AF.request(USER_API.LOGIN, method: .post, parameters: ["email":email, "password":password], encoder: JSONParameterEncoder.default)
+            request.responseJSON() {
                 response in
-                let res = response.value as! NSDictionary
-                let data = res["data"] as! NSDictionary
-                self.User_id = data["user_id"] as! Int
-                self.Username = data["username"] as! String
-                self.Password = data["password"] as! String
-                self.Email = data["email"] as! String
-                self.Avatar = data["avatar"] as! String
-                self.Token = data["token"] as! String
+                                let res = response.value as! NSDictionary
+                                let data = res["data"] as! NSDictionary
+                                id = data["user_id"] as! Int
+                                name = data["username"] as! String
+                                pass = data["password"] as! String
+                                email = data["email"] as! String
+                                avatar = data["avatar"] as! String
+                                token = data["token"] as! String
             }
+            self.User_id = id
+            self.Username = name
+            self.Password = pass
+            self.Email = email
+            self.Avatar = avatar
+            self.Token = token
+            
+//            AF.request(USER_API.LOGIN, method: .post, parameters: ["email":email, "password":password], encoder: JSONParameterEncoder.default).responseJSON {
+//                response in
+//                let res = response.value as! NSDictionary
+//                let data = res["data"] as! NSDictionary
+//                self.User_id = data["user_id"] as! Int
+//                self.Username = data["username"] as! String
+//                self.Password = data["password"] as! String
+//                self.Email = data["email"] as! String
+//                self.Avatar = data["avatar"] as! String
+//                self.Token = data["token"] as! String
+//            }
             
         } else {
             print("jajajadfadfa")
         }
     }
     
-     func register(_ username: String, _ email: String, _ password: String) {
+     mutating func register(_ username: String, _ email: String, _ password: String) {
         
-        
+        var id: Int = 0
+        var name: String = ""
+        var pass: String = ""
+        var email: String = ""
+        var avatar: String = ""
+        var token: String = ""
         
         if self.Token == "" {
+            
             AF.request(USER_API.REGISTER, method: .post, parameters: ["username": username, "email":email, "password":password], encoder: JSONParameterEncoder.default).responseJSON {
                 response in
-                let res = response.value as! NSDictionary
-                let data = res["data"] as! NSDictionary
-                self.User_id = data["user_id"] as! Int
-                self.Username = data["username"] as! String
-                self.Password = data["password"] as! String
-                self.Email = data["email"] as! String
-                self.Avatar = data["avatar"] as! String
-                self.Token = data["token"] as! String
+                                let res = response.value as! NSDictionary
+                                let data = res["data"] as! NSDictionary
+                                id = data["user_id"] as! Int
+                                name = data["username"] as! String
+                                pass = data["password"] as! String
+                                email = data["email"] as! String
+                                avatar = data["avatar"] as! String
+                                token = data["token"] as! String
             }
+            self.User_id = id
+            self.Username = name
+            self.Password = pass
+            self.Email = email
+            self.Avatar = avatar
+            self.Token = token
+            
+//            AF.request(USER_API.REGISTER, method: .post, parameters: ["username": username, "email":email, "password":password], encoder: JSONParameterEncoder.default).responseJSON {
+//                response in
+//                let res = response.value as! NSDictionary
+//                let data = res["data"] as! NSDictionary
+//                self.User_id = data["user_id"] as! Int
+//                self.Username = data["username"] as! String
+//                self.Password = data["password"] as! String
+//                self.Email = data["email"] as! String
+//                self.Avatar = data["avatar"] as! String
+//                self.Token = data["token"] as! String
+//            }
             
         } else {
             print("adfaadfaadf")
         }
     }
     
-     func logout() {
+     mutating func logout() {
         self.Token = ""
     }
 }
