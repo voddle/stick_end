@@ -51,7 +51,7 @@ struct LoginView: View {
                     Spacer()
                 }
                 .padding(.top)
-                TextField(" Password", text: $Password)
+                SecureField(" Password", text: $Password)
                     .padding(3)
                     .overlay(Rectangle().stroke().foregroundColor(Color.black))
                     .padding(.horizontal, 30).autocapitalization(UITextAutocapitalizationType.none)
