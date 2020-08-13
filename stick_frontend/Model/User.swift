@@ -30,8 +30,7 @@ struct User {
         
         if self.Token == "" {
             
-            let request = AF.request(USER_API.LOGIN, method: .post, parameters: ["email":email, "password":password], encoder: JSONParameterEncoder.default)
-            request.responseJSON() {
+            AF.request(USER_API.LOGIN, method: .post, parameters: ["email":email, "password":password], encoder: JSONParameterEncoder.default).responseJSON {
                 response in
                                 let res = response.value as! NSDictionary
                                 let data = res["data"] as! NSDictionary
