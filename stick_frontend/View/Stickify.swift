@@ -143,13 +143,22 @@ struct Stickify: View {
                         
                         Spacer()
                         Group {
-                            Image(systemName: "hand.thumbsup")
+                            
+                                Image(systemName: "hand.thumbsup")
+                                    .padding(.leading, self.screenSize.height * 0.001)
+                                Text("10")
+                            
+                            .padding(.trailing,self.screenSize.height * 0.001)
+                            .padding(.trailing)
                             Image(systemName: "star")
+                            .padding(.vertical,self.screenSize.height * 0.001)
+                            .padding(.trailing)
                             Image(systemName: "text.bubble")
+                            .padding(.vertical,self.screenSize.height * 0.001)
+                            .padding(.trailing)
                         }
                         .font(.callout)
-                        .padding(.vertical,self.screenSize.height * 0.001)
-                        .padding(.trailing)
+                        
                     } else {
                         EmptyView()
                     }
@@ -182,16 +191,10 @@ struct Stickify: View {
 
 //MARK: - Creat a animatable data to adjust the animation to achieve smooth animation in List
 
-struct Stickify_Previews: PreviewProvider {
-    static var previews: some View {
-        /*@START_MENU_TOKEN@*/Text("Hello, World!")/*@END_MENU_TOKEN@*/
-    }
-}
-
-
 /*　MARK: - Due to the reconstruction of Stick model, the following features were required:
-                1.thumbs count
+                1.thumbs count ---completed
                 2.thumb function
+                    thumb animation required
                 3.comments list ---- completed
                 4.comment function */
 
