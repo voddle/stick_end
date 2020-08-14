@@ -17,7 +17,7 @@ struct SignupView: View {
     @State private var Email: String = ""
     @State private var Username: String = ""
     @State private var Password: String = ""
-
+    
     
     var body: some View {
         ZStack {
@@ -35,13 +35,13 @@ struct SignupView: View {
                         .bold()
                         //.font(.system(size: ))
                         .padding(.horizontal, 30)
-                    .padding(.top, 10)
+                        .padding(.top, 10)
                     Spacer()
                 }
                 TextField(" E-mail", text: $Email)
                     .padding(3)
                     .overlay(Rectangle().stroke().foregroundColor(Color.black))
-                .padding(.horizontal, 30).autocapitalization(UITextAutocapitalizationType.none)
+                    .padding(.horizontal, 30).autocapitalization(UITextAutocapitalizationType.none)
                 
                 HStack {
                     Text("Username")
@@ -54,15 +54,15 @@ struct SignupView: View {
                 TextField(" Username", text: $Username)
                     .padding(3)
                     .overlay(Rectangle().stroke().foregroundColor(Color.black))
-                .padding(.horizontal, 30).autocapitalization(UITextAutocapitalizationType.none)
+                    .padding(.horizontal, 30).autocapitalization(UITextAutocapitalizationType.none)
                 
                 HStack {
                     Text("Password")
                         .bold()
                         //.font(.system(size: ))
                         .padding(.horizontal, 30)
-                    .padding(.top, 10)
-
+                        .padding(.top, 10)
+                    
                     Spacer()
                 }
                 TextField(" Password", text: $Password)
@@ -73,32 +73,32 @@ struct SignupView: View {
                 
                 HStack {
                     Spacer()
-                Button (action: {
-                    self.StickViewModel.register(username: self.Email, email: self.Username, password: self.Password)
-                }, label: {Text("Signup")                        .bold()
+                    Button (action: {
+                        self.StickViewModel.register(username: self.Email, email: self.Username, password: self.Password)
+                    }, label: {Text("Signup")                        .bold()
                     })
+                        
+                        .padding(5)
+                        .foregroundColor(Color.white)
+                        .background(Rectangle())
+                        .padding(.horizontal, 30)
+                        .padding(.top, 10)
                     
-                .padding(5)
-                .foregroundColor(Color.white)
-                    .background(Rectangle())
-                    .padding(.horizontal, 30)
-                    .padding(.top, 10)
-
                 }
                 .padding(.top)
                 HStack {
                     Spacer()
-                Button (action: {
-                    self.condition.signup()
-                }, label: {Text("Already have one").bold()
+                    Button (action: {
+                        self.condition.signup()
+                    }, label: {Text("Already have one").bold()
                     })
+                        
+                        .padding(.horizontal, 2)
+                        .foregroundColor(Color.white)
+                        .background(Rectangle())
+                        .padding(.horizontal, 30)
+                        .padding(.top, 10)
                     
-                    .padding(.horizontal, 2)
-                .foregroundColor(Color.white)
-                    .background(Rectangle())
-                    .padding(.horizontal, 30)
-                    .padding(.top, 10)
-
                 }
                 .padding(.top)
                 

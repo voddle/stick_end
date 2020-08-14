@@ -14,34 +14,34 @@ struct ContentView: View {
     @ObservedObject var StickViewModel: StickMedium
     
     @State private var selection = 0
- 
+    
     var body: some View {
         
         TabView(selection: $selection){
-
-//            List {
-//                ForEach () { item in
-//
-//                }
-//            }
+            
+            //            List {
+            //                ForEach () { item in
+            //
+            //                }
+            //            }
             BrowseView(StickViewModel: StickViewModel)
                 //MARK: - Next step is creat model of sticks array, creat the list view here with Foreach(), finish the stickify, implement the infinite scroll function
-            .font(.title)
-            .tabItem {
-                VStack {
-                    Image(systemName: "magnifyingglass")
-                    Text("Discover")
-                }
+                .font(.title)
+                .tabItem {
+                    VStack {
+                        Image(systemName: "magnifyingglass")
+                        Text("Discover")
+                    }
             }
             .tag(0)
-
+            
             ProfileView(condition: condition, StickViewModel: StickViewModel)
-            .font(.title)
-            .tabItem {
-                VStack {
-                    Image(systemName: "person.crop.circle")
-                    Text("Profile")
-                }
+                .font(.title)
+                .tabItem {
+                    VStack {
+                        Image(systemName: "person.crop.circle")
+                        Text("Profile")
+                    }
             }
             .tag(1)
         }

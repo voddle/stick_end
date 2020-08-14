@@ -54,7 +54,7 @@ struct ProfileView: View {
                 
             }
         }
-        .onAppear {UITableView.appearance().separatorStyle = .none} // invisible the sperate line
+            .onAppear {UITableView.appearance().separatorStyle = .none} // invisible the sperate line
     }
 }
 

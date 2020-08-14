@@ -14,6 +14,8 @@ struct BrowseView: View {
     
     @State private var choose: Bool = false
     
+    @State private var post_status: Bool = false
+    
     var body: some View {
         VStack{
             HStack {
@@ -29,13 +31,18 @@ struct BrowseView: View {
                     .padding(.horizontal)
                     .padding(.top)
                     .onTapGesture {
-                        self.StickViewModel.loadSticks()
+                        //self.StickViewModel.loadSticks() //this is just temporarily
+                        self.post_status.toggle()
                     }
+                .sheet(isPresented: $post_status) {
+                    PostView()
+                }
             }
             ScrollView {
-                ForEach (StickViewModel.Sticks) {Stick in
-                    Stickify(stick: Stick, Choosen: self.$choose)
-                }
+//                ForEach (StickViewModel.Sticks) {Stick in
+//                    Stickify(stick: Stick, Choosen: self.$choose)
+//                }
+                Text("1")
             }.animation(Animation.easeInOut(duration: 0.1))
         }
     }

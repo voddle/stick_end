@@ -85,17 +85,17 @@ struct LoginView: View {
                     }.padding(.bottom, 30)
                         .padding(.trailing, 30)
                 }
-                    
+                
                 
                 HStack {
                     Spacer()
                     Button (action: {
                         self.StickViewModel.login(email: self.Email, password: self.Password)
                     }, label: {Text("Login").bold()})
-                    .padding(5)
-                    .foregroundColor(Color.white)
-                    .background(Rectangle())
-                    .padding(.horizontal, 30)
+                        .padding(5)
+                        .foregroundColor(Color.white)
+                        .background(Rectangle())
+                        .padding(.horizontal, 30)
                 }
                 .padding(.top)
                 
@@ -104,11 +104,11 @@ struct LoginView: View {
                 Button (action: {
                     self.condition.signup()
                 }, label: {Text("Signup")})
-                .padding(5)
-                .foregroundColor(Color.white)
-                .background(Rectangle())
-                .opacity(0.9)
-                .padding(.top, 50)
+                    .padding(5)
+                    .foregroundColor(Color.white)
+                    .background(Rectangle())
+                    .opacity(0.9)
+                    .padding(.top, 50)
             }
             .padding(.top)
             
