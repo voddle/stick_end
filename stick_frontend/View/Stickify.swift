@@ -65,7 +65,7 @@ struct Stickify: View {
                                 .padding(.trailing, self.screenSize.width * 0.02)
                                 .onTapGesture {
                                     self.unfold.toggle()
-                                }
+                            }
                         } else {
                             EmptyView()
                         }
@@ -76,8 +76,9 @@ struct Stickify: View {
                 .contentShape(Rectangle())
             }
             HStack {
-                Text("#TAG#TAG#TAG")
-                    .font(.caption)
+                ForEach (stick.tag) {TAG in
+                    Text(TAG.Content)
+                }
                 Spacer()
             }
             
@@ -90,11 +91,11 @@ struct Stickify: View {
                         Spacer(minLength: 0)
                         
                     }
-                    
+                        
                     .padding(.top, 5)
                     .frame(maxHeight: unfold ? nil : self.screenSize.height * 0.15)
-                    //8.2. this part act really strange on iphone 11.
-                    .animation(Animation.linear(duration: 0).delay(unfold ? 0.4 : 0))
+                        //8.2. this part act really strange on iphone 11.
+                        .animation(Animation.linear(duration: 0).delay(unfold ? 0.4 : 0))
                     
                     
                     Group {
@@ -105,16 +106,16 @@ struct Stickify: View {
                                     Text("Comments").font(.callout).bold().padding(.leading, self.screenSize.width * 0.01)
                                     Spacer()
                                 }
-                                ForEach (stick.comments) {Comment in
-                                Group {
-                                    HStack (alignment: .top){
-                                        Image(systemName: "person.crop.circle").padding(.leading, self.screenSize.width * 0.01)
-                                        Text("Username").font(.caption).bold()
-                                        Text(Comment.content).font(.caption)
-                                        Spacer()
-                                        
-                                    }.padding(.bottom, self.screenSize.height * 0.01)
-                                }
+                                ForEach (stick.comments) { Comment in
+                                    Group {
+                                        HStack (alignment: .top){
+                                            Image(systemName: "person.crop.circle").padding(.leading, self.screenSize.width * 0.01)
+                                            Text("Username").font(.caption).bold()
+                                            Text(Comment.content).font(.caption)
+                                            Spacer()
+                                            
+                                        }.padding(.bottom, self.screenSize.height * 0.01)
+                                    }
                                 }
                                 //demo of comment
                                 //MARK: - this part should implement with ForEach to get all the comment
@@ -128,7 +129,7 @@ struct Stickify: View {
                     
                     Spacer()
                 }
-                .scrollable(unfold: unfold) // the length of content part should be limit so doesn't need to be limit, only the comment part should be scrollable
+                    .scrollable(unfold: unfold) // the length of content part should be limit so doesn't need to be limit, only the comment part should be scrollable
                 
                 // content part dosen't go on top, the Spacer() can't solve the problem
                 
@@ -144,18 +145,18 @@ struct Stickify: View {
                         Spacer()
                         Group {
                             
-                                Image(systemName: "hand.thumbsup")
-                                    .padding(.leading, self.screenSize.height * 0.001)
-                                Text("10")
-                            
-                            .padding(.trailing,self.screenSize.height * 0.001)
-                            .padding(.trailing)
+                            Image(systemName: "hand.thumbsup")
+                                .padding(.leading, self.screenSize.height * 0.001)
+                            Text("\(stick.Thumb)")
+                                
+                                .padding(.trailing,self.screenSize.height * 0.001)
+                                .padding(.trailing)
                             Image(systemName: "star")
-                            .padding(.vertical,self.screenSize.height * 0.001)
-                            .padding(.trailing)
+                                .padding(.vertical,self.screenSize.height * 0.001)
+                                .padding(.trailing)
                             Image(systemName: "text.bubble")
-                            .padding(.vertical,self.screenSize.height * 0.001)
-                            .padding(.trailing)
+                                .padding(.vertical,self.screenSize.height * 0.001)
+                                .padding(.trailing)
                         }
                         .font(.callout)
                         
@@ -167,7 +168,7 @@ struct Stickify: View {
                 //.animation(Animation.easeInOut(duration: 0.1).delay(unfold ? 0.35 : 0))
             }
         }
-        
+            
         .padding(self.screenSize.width * 0.03)
         .overlay(Rectangle().stroke(lineWidth: 2).foregroundColor(Color.black).padding(self.screenSize.width * 0.02))
         .frame(height: unfold ? self.screenSize.height * 0.6 : self.screenSize.height * 0.15)
@@ -192,9 +193,10 @@ struct Stickify: View {
 //MARK: - Creat a animatable data to adjust the animation to achieve smooth animation in List
 
 /*　MARK: - Due to the reconstruction of Stick model, the following features were required:
-                1.thumbs count ---completed
-                2.thumb function
-                    thumb animation required
-                3.comments list ---- completed
-                4.comment function */
+ 1.thumbs count ---completed
+ 2.thumb function
+ thumb animation required
+ 3.comments list ---- completed
+ 4.comment function */
 
+//MARK: - How to record which Stick have been LIKED, I deem it should be stored on the server, a liked list, when responsing a get_stick request, match the requester and the liked list

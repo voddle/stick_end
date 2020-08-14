@@ -36,3 +36,7 @@ struct USER_STICK_API {
         return CONFIG.HOST + USER_STICK_API.PREFIX + "/\(user_id)/sticks/\(stick_id)"
     }
 }
+
+struct LIKE_API {
+    var a = 1
+}

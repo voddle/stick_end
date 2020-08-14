@@ -62,4 +62,5 @@ struct StickApp {
 //        }
 //    }
 
-
+//MARK: - Post Stick function
+//MARK: - Stick Like function, a http post request, send a empty body, server +1 thumb

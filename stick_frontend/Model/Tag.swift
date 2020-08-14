@@ -8,9 +8,9 @@
 
 import Foundation
 
-struct Tag {
+struct Tag: Identifiable {
     let Content: String
-    let Tag_id: String
+    let id: String //used to be Tag_id
 }
 
 struct TagApp {
