@@ -22,8 +22,7 @@ struct PostView: View {
             HStack {
                 Spacer()
                 Image(systemName: "square.and.arrow.up")
-                    .padding(.horizontal)
-                    .font(.caption)
+                    .padding()
                     .onTapGesture {
                         //post function
                 }
