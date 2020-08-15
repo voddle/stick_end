@@ -12,10 +12,15 @@ class StickMedium: ObservableObject {
     
     @Published private(set) var Stick: StickApp = StickApp()
     @Published private(set) var UserModel: User = User()
+    @Published private(set) var TagModel: TagApp = TagApp()
     
     
     var Sticks: Array<StickApp.Stick> {
         return Stick.sticks
+    }
+    
+    var Tags: Array<TagApp.Tag> {
+        return TagModel.Tags
     }
     
     var Username: String {

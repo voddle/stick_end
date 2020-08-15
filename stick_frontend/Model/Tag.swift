@@ -8,11 +8,13 @@
 
 import Foundation
 
-struct Tag: Identifiable {
-    let Content: String
-    let id: String //used to be Tag_id
-}
-
 struct TagApp {
-    let Tags: [Tag]
+
+struct Tag: Identifiable {
+    let Content: String = ""
+    let id: Int = 1//used to be Tag_id
+}
+    
+    let Tags: [Tag] = []
+    
 }

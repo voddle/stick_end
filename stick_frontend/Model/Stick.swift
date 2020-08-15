@@ -21,7 +21,7 @@ struct StickApp {
         let Location: String
         var Content: String
         var user: User  // 创建者的信息
-        var tag: [Tag] // 标签列表
+        var tag: [TagApp.Tag] // 标签列表
         var comments: [Comment] // 评论列表
 }
 

@@ -35,14 +35,13 @@ struct BrowseView: View {
                         self.post_status.toggle()
                     }
                 .sheet(isPresented: $post_status) {
-                    PostView()
+                    PostView(StickViewModel: StickMedium())
                 }
             }
             ScrollView {
-//                ForEach (StickViewModel.Sticks) {Stick in
-//                    Stickify(stick: Stick, Choosen: self.$choose)
-//                }
-                Text("1")
+                ForEach (StickViewModel.Sticks) {Stick in
+                    Stickify(stick: Stick, Choosen: self.$choose)
+                }
             }.animation(Animation.easeInOut(duration: 0.1))
         }
     }
