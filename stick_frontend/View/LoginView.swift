@@ -18,11 +18,6 @@ struct LoginView: View {
     
     var body: some View {
         ZStack {
-            /*NavigationView {
-             NavigationLink(destination: SignupView(Net: Network())) {
-             Text("Press on me")
-             }.buttonStyle(PlainButtonStyle())
-             }*/
             
             VStack {
                 Text("Stick")

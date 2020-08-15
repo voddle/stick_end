@@ -49,18 +49,7 @@ struct StickApp {
         sticks = Array<Stick>()
         getSticks()
     }
-    
 }
-
-
-
-//    init() {
-//        sticks = Array<stick>()
-//        for stickIndex in 0 ..< 20 {
-//            let body:URLResponse =
-//            
-//        }
-//    }
 
 //MARK: - Post Stick function
 //MARK: - Stick Like function, a http post request, send a empty body, server +1 thumb

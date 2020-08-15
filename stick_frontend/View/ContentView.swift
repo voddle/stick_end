@@ -19,11 +19,6 @@ struct ContentView: View {
         
         TabView(selection: $selection){
             
-            //            List {
-            //                ForEach () { item in
-            //
-            //                }
-            //            }
             BrowseView(StickViewModel: StickViewModel)
                 //MARK: - Next step is creat model of sticks array, creat the list view here with Foreach(), finish the stickify, implement the infinite scroll function
                 .font(.title)
