@@ -45,15 +45,23 @@ struct PostView: View {
                     Spacer()
                 }
             
+            Divider()
+            
             ScrollView(.horizontal) {
                 HStack {
                     ForEach (StickViewModel.Tags) { Tag in
                         Button (action: {self.tag.append(Tag)}) {
-                            Text(Tag.Content)
-                                .font(.caption)
-                                .bold()
-                                .foregroundColor(Color.black)
-                        }.padding(.leading, self.screenSize.width * 0.005)
+                            Group {
+                                Text(Tag.Content)
+                                    .font(.caption)
+                                    .bold()
+                                    .foregroundColor(Color.black)
+                                .fixedSize(horizontal: false, vertical: true)
+                            }
+                        
+                        }
+                        .padding(.leading, self.screenSize.width * 0.01)
+                        .padding(.bottom)
                     }
                 }
             }
