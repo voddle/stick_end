@@ -11,7 +11,7 @@ import Foundation
 struct TagApp {
 
 struct Tag: Identifiable {
-    let Content: String = ""
+    let Content: String = "1"
     let id: Int = 1//used to be Tag_id
 }
     

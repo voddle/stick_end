@@ -18,10 +18,15 @@ struct PostView: View {
     
     var body: some View {
         VStack {
+            
             HStack {
-                TextField("Please entre the content you want to post", text: $Stick_Content)
-                    .padding(.leading)
                 Spacer()
+                Image(systemName: "square.and.arrow.up")
+                    .padding(.horizontal)
+                    .font(.caption)
+                    .onTapGesture {
+                        //post function
+                }
             }
             
             HStack {
@@ -42,7 +47,18 @@ struct PostView: View {
                 }
             }
             
+            HStack {
+                TextField("Please entre the content you want to post", text: $Stick_Content)
+                    .padding(.leading)
+                Spacer()
+            }
+            .overlay(Rectangle().stroke().padding().foregroundColor(Color.black))
             
+            Spacer()
+            
+            //MARK: - The PostView is hidden by swipe down gesture since it's a sheet
+            
+            //MARK: - I believe this component needs more code to realize the function of getting location, time, duration of stick, user_id (Maybe id the implicit func form the client)
             
         }
     }
