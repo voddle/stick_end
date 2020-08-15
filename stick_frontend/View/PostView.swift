@@ -10,6 +10,8 @@ import SwiftUI
 
 struct PostView: View {
     
+    let screenSize: CGRect = UIScreen.main.bounds
+    
     @State private var Stick_Content: String = ""
     
     @ObservedObject var StickViewModel: StickMedium
@@ -17,6 +19,7 @@ struct PostView: View {
     @State var tag: [TagApp.Tag] = []
     
     var body: some View {
+        
         VStack {
             
             HStack {
@@ -27,21 +30,30 @@ struct PostView: View {
                         //post function
                 }
             }
-            
-            HStack {
-                ForEach (tag) { Tag in
-                    Text(Tag.Content)
-                        .font(.caption)
-                        .bold()
-                        .padding(.horizontal)
+                HStack {
+                    ForEach (tag) { Tag in
+                        Text(Tag.Content)
+                            .font(.caption)
+                            .bold()
+                            .padding(.leading, self.screenSize.width * 0.01)
+                        .onTapGesture {
+                            let index = self.tag.firstIndex(matching: Tag)! // The ! is in order to guarantee the index is an Int
+                            self.tag.remove(at: index)
+                        }
+                    }
+                    
+                    Spacer()
                 }
-            }
             
             ScrollView(.horizontal) {
-                ForEach (StickViewModel.Tags) { Tag in
-                    Button (action: {self.tag.append(Tag)}) {
-                        Text(Tag.Content)
-                            .padding(.horizontal)
+                HStack {
+                    ForEach (StickViewModel.Tags) { Tag in
+                        Button (action: {self.tag.append(Tag)}) {
+                            Text(Tag.Content)
+                                .font(.caption)
+                                .bold()
+                                .foregroundColor(Color.black)
+                        }.padding(.leading, self.screenSize.width * 0.005)
                     }
                 }
             }

@@ -11,10 +11,20 @@ import Foundation
 struct TagApp {
 
 struct Tag: Identifiable {
-    let Content: String = "1"
-    let id: Int = 1//used to be Tag_id
+    var Content: String
+    var id: Int
 }
     
-    let Tags: [Tag] = []
+    let TagText: [String] = ["Food", "Mood", "News", "Trans", "Nothing"]
+    
+    var Tags: Array<Tag>
+    
+    init() {
+        Tags = Array<Tag>()
+        for index in 0 ..< 5 {
+            Tags.append(Tag(Content: TagText[index], id: index))
+        }
+        print(TagText.count)
+    }
     
 }

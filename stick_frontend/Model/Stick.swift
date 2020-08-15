@@ -47,7 +47,7 @@ struct StickApp {
     
     init(){
         sticks = Array<Stick>()
-        getSticks()
+        //getSticks()
     }
 }
 
