@@ -47,4 +47,8 @@ class StickMedium: ObservableObject {
         UserModel.register(username, email, password)
     }
     
+    func invis(Index: Int) {
+        TagModel.Invis(Index: Index)
+    }
+    
 }

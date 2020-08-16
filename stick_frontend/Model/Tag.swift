@@ -13,6 +13,7 @@ struct TagApp {
 struct Tag: Identifiable {
     var Content: String
     var id: Int
+    var Picked: Bool = false
 }
     
     let TagText: [String] = ["Food", "Mood", "News", "Trans", "Nothing"]
@@ -25,6 +26,10 @@ struct Tag: Identifiable {
             Tags.append(Tag(Content: TagText[index], id: index))
         }
         print(TagText.count)
+    }
+    
+    mutating func Invis(Index: Int){
+        Tags[Index].Picked.toggle()
     }
     
 }

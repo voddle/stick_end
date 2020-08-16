@@ -25,43 +25,57 @@ struct PostView: View {
             HStack {
                 Spacer()
                 Image(systemName: "square.and.arrow.up")
+                    
                     .padding()
                     .onTapGesture {
                         //post function
                 }
             }
-                HStack {
+            HStack {
                     ForEach (tag) { Tag in
                         Text(Tag.Content)
                             .font(.caption)
                             .bold()
+                            .fixedSize(horizontal: false, vertical: true)
+                            .padding(.horizontal, self.screenSize.width * 0.01)
+                            .background(Color.gray)
+                            .cornerRadius(10)
                             .padding(.leading, self.screenSize.width * 0.01)
-                        .onTapGesture {
-                            let index = self.tag.firstIndex(matching: Tag)! // The ! is in order to guarantee the index is an Int
-                            self.tag.remove(at: index)
-                        }
+                            .onTapGesture {
+                                let index = self.tag.firstIndex(matching: Tag)! // The ! is in order to guarantee the index is an Int
+                                self.tag.remove(at: index)
                     }
-                    
-                    Spacer()
                 }
+                Spacer()
+            }
             
             Divider()
             
             ScrollView(.horizontal) {
                 HStack {
                     ForEach (StickViewModel.Tags) { Tag in
-                        Button (action: {self.tag.append(Tag)}) {
+                        if !Tag.Picked {
+                        Button (action: {
+                            self.tag.append(Tag)
+                            let index = self.tag.firstIndex(matching: Tag)!
+                            self.StickViewModel.invis(Index: index)
+                        }) {
                             Group {
                                 Text(Tag.Content)
                                     .font(.caption)
                                     .bold()
-                                    .foregroundColor(Color.black)
+                                    .foregroundColor(Color.black).padding(.horizontal, self.screenSize.width * 0.01)
+                                        .background(Color.gray)
+                                    .cornerRadius(10)
                                 .fixedSize(horizontal: false, vertical: true)
                             }
                         
                         }
                         .padding(.leading, self.screenSize.width * 0.01)
                         .padding(.bottom)
+                        } else {
+                            
+                        }
                     }
                 }
             }
