@@ -25,9 +25,13 @@ struct PostView: View {
         VStack {
             
             HStack {
+                Text("Creating Stick")
+                    .font(.title)
+                    .bold()
+                    .padding(.leading)
+                    .padding(.top)
                 Spacer()
                 Image(systemName: "square.and.arrow.up")
-                    
                     .padding()
                     .onTapGesture {
                         //post function
@@ -35,9 +39,13 @@ struct PostView: View {
             }
             
             HStack {
-                Text("1")
+                Text("Tags: ")
                     .font(.caption)
-                    .foregroundColor(Color.clear)
+                    .foregroundColor(Color.black)
+                    .padding(.leading)
+                ScrollView (.horizontal){
+                    HStack {
+                        
                     ForEach (StickViewModel.Tags) { Tag in
 //                        Text(Tag.Content)
 //                            .font(.caption)
@@ -71,8 +79,13 @@ struct PostView: View {
                         } else {
                             
                         }
+                    }
+                        Text(".")
+                        .font(.caption)
+                        .foregroundColor(Color.clear)
                 }
-                Spacer()
+                }
+                //Spacer()
             }
             
             Divider()
@@ -95,6 +108,7 @@ struct PostView: View {
                                     .foregroundColor(Color.black).padding(.horizontal, self.screenSize.width * 0.01)
                                         .background(Color.gray)
                                     .cornerRadius(10)
+                                    .padding(.top, self.screenSize.width * 0.01)
                                 .fixedSize(horizontal: false, vertical: true)
                             }
                         
@@ -116,7 +130,9 @@ struct PostView: View {
                         Spacer()
                         Text("Ano")
                     }
-                }.padding(.horizontal)
+                }
+                .padding(.horizontal)
+                .padding(.bottom)
             }
             
             HStack {
