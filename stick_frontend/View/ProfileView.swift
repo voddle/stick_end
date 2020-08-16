@@ -10,6 +10,8 @@ import SwiftUI
 
 struct ProfileView: View {
     
+    let screenSize: CGRect = UIScreen.main.bounds
+    
     @ObservedObject var condition: ViewCondition
     @ObservedObject var StickViewModel: StickMedium
     @State private var choose: Bool = false
@@ -49,7 +51,14 @@ struct ProfileView: View {
                 Spacer(minLength: 10)
                 Button (action: {
                     self.StickViewModel.logout()
-                }, label: { Text("Logout").padding(.horizontal).padding(.bottom)})
+                }) {
+                    Text("Logout")
+                        .padding(self.screenSize.width * 0.005)
+                        .overlay(Rectangle().stroke(Color.black, lineWidth: 3))
+                        .foregroundColor(Color.black)
+                    .padding(.horizontal)
+                    .padding(.bottom)
+                }
                 
                 
             }
