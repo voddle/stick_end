@@ -31,34 +31,28 @@ struct PostView: View {
                         //post function
                 }
             }
+            
             HStack {
-                    ForEach (tag) { Tag in
-                        Text(Tag.Content)
-                            .font(.caption)
-                            .bold()
-                            .fixedSize(horizontal: false, vertical: true)
-                            .padding(.horizontal, self.screenSize.width * 0.01)
-                            .background(Color.gray)
-                            .cornerRadius(10)
-                            .padding(.leading, self.screenSize.width * 0.01)
-                            .onTapGesture {
-                                let index = self.tag.firstIndex(matching: Tag)! // The ! is in order to guarantee the index is an Int
-                                self.tag.remove(at: index)
-                    }
-                }
-                Spacer()
-            }
-            
-            Divider()
-            
-            ScrollView(.horizontal) {
-                HStack {
+                Text("1")
+                    .font(.caption)
+                    .foregroundColor(Color.clear)
                     ForEach (StickViewModel.Tags) { Tag in
-                        if !Tag.Picked {
+//                        Text(Tag.Content)
+//                            .font(.caption)
+//                            .bold()
+//                            .fixedSize(horizontal: false, vertical: true)
+//                            .padding(.horizontal, self.screenSize.width * 0.01)
+//                            .background(Color.gray)
+//                            .cornerRadius(10)
+//                            .padding(.leading, self.screenSize.width * 0.01)
+//                            .onTapGesture {
+//                                let index = self.tag.firstIndex(matching: Tag)! // The ! is in order to guarantee the index is an Int
+//                                self.tag.remove(at: index)
+//                    }
+                        if Tag.Picked {
                         Button (action: {
-                            self.tag.append(Tag)
-                            let index = self.tag.firstIndex(matching: Tag)!
-                            self.StickViewModel.invis(Index: index)
+                            //self.tag.remove(at: Tag.id) //MARK: problem
+                            self.StickViewModel.invis(Index: Tag.id)
                         }) {
                             Group {
                                 Text(Tag.Content)
@@ -72,13 +66,46 @@ struct PostView: View {
                         
                         }
                         .padding(.leading, self.screenSize.width * 0.01)
-                        .padding(.bottom)
+                        } else {
+                            
+                        }
+                }
+                Spacer()
+            }
+            
+            Divider()
+            
+            ScrollView(.horizontal) {
+                HStack {
+                    Text("1")
+                        .font(.caption)
+                        .foregroundColor(Color.clear)
+                    ForEach (StickViewModel.Tags) { Tag in
+                        if !Tag.Picked {
+                        Button (action: {
+                            //self.tag.append(Tag)
+                            self.StickViewModel.invis(Index: Tag.id)
+                        }) {
+                            Group {
+                                Text(Tag.Content)
+                                    .font(.caption)
+                                    .bold()
+                                    .foregroundColor(Color.black).padding(.horizontal, self.screenSize.width * 0.01)
+                                        .background(Color.gray)
+                                    .cornerRadius(10)
+                                .fixedSize(horizontal: false, vertical: true)
+                            }
+                        
+                        }
+                        .padding(.leading, self.screenSize.width * 0.01)
+                        .padding(.bottom, self.screenSize.width * 0.01)
                         } else {
                             
                         }
                     }
                 }
             }
+            Divider()
             
             HStack {
                 TextField("Please entre the content you want to post", text: $Stick_Content)

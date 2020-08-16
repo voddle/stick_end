@@ -22,10 +22,9 @@ struct Tag: Identifiable {
     
     init() {
         Tags = Array<Tag>()
-        for index in 0 ..< 5 {
+        for index in 0 ..< TagText.count {
             Tags.append(Tag(Content: TagText[index], id: index))
         }
-        print(TagText.count)
     }
     
     mutating func Invis(Index: Int){
