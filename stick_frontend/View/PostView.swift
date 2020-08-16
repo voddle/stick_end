@@ -18,6 +18,8 @@ struct PostView: View {
     
     @State var tag: [TagApp.Tag] = []
     
+    @State var Ano: Bool = false
+    
     var body: some View {
         
         VStack {
@@ -105,7 +107,17 @@ struct PostView: View {
                     }
                 }
             }
+            
             Divider()
+            
+            HStack {
+                Toggle(isOn: $Ano) {
+                    HStack {
+                        Spacer()
+                        Text("Ano")
+                    }
+                }.padding(.horizontal)
+            }
             
             HStack {
                 TextField("Please entre the content you want to post", text: $Stick_Content)
@@ -121,6 +133,10 @@ struct PostView: View {
             //MARK: - I believe this component needs more code to realize the function of getting location, time, duration of stick, user_id (Maybe id the implicit func form the client)
             
         }
+        .background(Ano ? Color.gray : Color.white)
+        .animation(Animation.easeInOut(duration: 0.1))
+        
+        
     }
 }
 
