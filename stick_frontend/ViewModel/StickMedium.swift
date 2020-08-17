@@ -51,4 +51,8 @@ class StickMedium: ObservableObject {
         TagModel.Invis(Index: Index)
     }
     
+    func sendStick(tags: [TagApp.Tag], ano: Bool, content: String, user_id: Int) {
+        Stick.sendStick(tags: tags, ano: ano, content: content, user_id: user_id)
+    }
+    
 }

@@ -34,6 +34,12 @@ struct PostView: View {
                 Image(systemName: "square.and.arrow.up")
                     .padding()
                     .onTapGesture {
+                        for Tag in self.StickViewModel.Tags {
+                            if Tag.Picked {
+                                self.tag.append(Tag)
+                                StickViewModel.sendStick(tags: self.tag, ano: self.Ano, content: self.Stick_Content, user_id: StickViewModel.UserModel.User_id)
+                            }
+                        }
                         //post function
                 }
             }
