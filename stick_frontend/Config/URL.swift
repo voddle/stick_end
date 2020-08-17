@@ -23,6 +23,7 @@ struct USER_API {
 struct STICK_API {
     static let PREFIX = "/api/stick/sticks"
     static let GET_STICKS = CONFIG.HOST + STICK_API.PREFIX + ""
+    static let SEND_STICKS = CONFIG.HOST + STICK_API.PREFIX + ""
 }
 
 struct USER_STICK_API {
@@ -39,4 +40,10 @@ struct USER_STICK_API {
 
 struct LIKE_API {
     var a = 1
+}
+
+struct TAG_API {
+    static let PREFIX = ""
+    static let GET = CONFIG.HOST + PREFIX + ""
+    static let SEND = CONFIG.HOST + PREFIX + ""
 }

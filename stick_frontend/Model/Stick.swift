@@ -45,6 +45,11 @@ struct StickApp {
         self.sticks.append(contentsOf: sticks)
     }
     
+    func sendStick(tags: [TagApp.Tag], ano: Bool, content: String, user_id: Int) {
+        AF.request(STICK_API.SEND_STICKS, method: .post, parameters: ["tags": tags, "ano": ano, "content": content, "user_id": user_id])
+        //need to make sure the Stick was sended successful or not
+    }
+    
     init(){
         sticks = Array<Stick>()
         //getSticks()
