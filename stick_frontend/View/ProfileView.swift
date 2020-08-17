@@ -51,6 +51,7 @@ struct ProfileView: View {
                 Spacer(minLength: 10)
                 Button (action: {
                     self.StickViewModel.logout()
+                    self.condition.login()
                 }) {
                     Text("Logout")
                         .padding(self.screenSize.width * 0.005)

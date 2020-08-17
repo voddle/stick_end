@@ -30,5 +30,6 @@ class ViewCondition: ObservableObject {
         }
         print("sign upcondition \(self.isSignup)")
     }
+    
 }
 
