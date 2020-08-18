@@ -39,6 +39,10 @@ class StickMedium: ObservableObject {
         Stick.getSticks()
     }
     
+    func loadSelfSticks() {
+        Stick.getSelfSticks()
+    }
+    
     func logout() {
         UserModel.logout()
     }
