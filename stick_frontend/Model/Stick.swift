@@ -28,6 +28,8 @@ struct StickApp {
     
     private(set) var sticks: Array<Stick>
     
+    private(set) var selfSticks: Array<Stick>
+    
     
     // 获取全部
     mutating func getSticks(){
@@ -45,15 +47,42 @@ struct StickApp {
         self.sticks.append(contentsOf: sticks)
     }
     
+    mutating func getSelfSticks(){
+        var selfSticks: Array<Stick> = []
+        let request = AF.request(STICK_API.GET_SELF_STICKS)
+        
+        // TODO: 貌似中文传过来会出现编码的问题，建议修复一下
+        request.responseJSON() { (data) in
+            let res = data.value as! NSDictionary
+            let data = res["data"] as! Array<Stick>
+            
+            selfSticks = data
+        }
+        print(selfSticks)
+        self.selfSticks.append(contentsOf: selfSticks)
+    }
+    
     func sendStick(tags: [TagApp.Tag], ano: Bool, content: String, user_id: Int) {
-        AF.request(STICK_API.SEND_STICKS, method: .post, parameters: ["tags": tags, "ano": ano, "content": content, "user_id": user_id])
+        AF.request(STICK_API.SEND_STICKS, method: .post, parameters: ["tags": tags, "ano": ano, "content": content, "user_id": user_id]).responseJSON { response in
+                let res = response.value as! NSDictionary
+                let data = res["data"] as! NSDictionary
+                let status_code = data["status code"] as! Int
+            if status_code == 200 {
+                print("POST SUCCESS")
+            }
+            
+        }
         //need to make sure the Stick was sended successful or not
     }
     
     init(){
         sticks = Array<Stick>()
         //getSticks()
+        selfSticks = Array<Stick>()
+        //getSelfSticks()
     }
+    
+    
 }
 
 //MARK: - Post Stick function

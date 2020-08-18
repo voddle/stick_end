@@ -19,6 +19,10 @@ class StickMedium: ObservableObject {
         return Stick.sticks
     }
     
+    var SelfSticks: Array<StickApp.Stick> {
+        return Stick.selfSticks
+    }
+    
     var Tags: Array<TagApp.Tag> {
         return TagModel.Tags
     }

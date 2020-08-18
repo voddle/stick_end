@@ -39,7 +39,7 @@ struct ProfileView: View {
                 // 这里之所以过不了编译是因为我不会写555
                 
                 
-                ForEach (StickViewModel.Sticks) {Stick in
+                ForEach (StickViewModel.SelfSticks) {Stick in
                     Stickify(stick: Stick, Choosen: self.$choose)
                 }
                 

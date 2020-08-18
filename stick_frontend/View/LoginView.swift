@@ -31,7 +31,7 @@ struct LoginView: View {
                     Text("E-mail")
                         .bold()
                         //.font(.system(size: ))
-                    .padding(.horizontal, 30)
+                        .padding(.horizontal, 30)
                     Spacer()
                 }
                 TextField(" E-mail", text: $Email)
@@ -39,7 +39,6 @@ struct LoginView: View {
                     .overlay(Rectangle().stroke().foregroundColor(Color.black))
                     .padding(.horizontal, 30)
                     .autocapitalization(UITextAutocapitalizationType.none)
-                
                 HStack {
                     Text("Password")
                         .bold()
@@ -53,21 +52,11 @@ struct LoginView: View {
                     if secure {
                         SecureField(" Password", text: $Password)
                             .padding(3)
-                            //.overlay(Rectangle().stroke().foregroundColor(Color.black))
-//                            .padding(.leading, 30)
-//                            .padding(.trailing, 17)
                             .autocapitalization(UITextAutocapitalizationType.none)
-//                            .padding(.bottom, 30)
-                        
                     } else {
                         TextField(" Password", text: $Password)
                             .padding(3)
-                            
-                            //.overlay(Rectangle().stroke().foregroundColor(Color.black))
-//                            .padding(.leading, 30)
-//                            .padding(.trailing, 17)
                             .autocapitalization(UITextAutocapitalizationType.none)
-//                            .padding(.bottom, 30)
                     }
                     Button (action: {
                         self.secure.toggle()
@@ -81,11 +70,6 @@ struct LoginView: View {
                         .foregroundColor(Color.black)
                 }.overlay(Rectangle().stroke().foregroundColor(Color.black))
                     .padding(.horizontal, 30)
-
-//                    .padding(.leading, 30)
-//                    .padding(.trailing, 17)
-//                    .padding(.bottom, 30)
-                
                 
                 HStack {
                     Button (action: {

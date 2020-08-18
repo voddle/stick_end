@@ -27,6 +27,7 @@ struct ContentView: View {
                         Image(systemName: "magnifyingglass")
                         Text("Discover")
                     }
+                    .foregroundColor(Color.black)
             }
             .tag(0)
             

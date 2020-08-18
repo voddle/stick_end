@@ -23,6 +23,7 @@ struct USER_API {
 struct STICK_API {
     static let PREFIX = "/api/stick/sticks"
     static let GET_STICKS = CONFIG.HOST + STICK_API.PREFIX + ""
+    static let GET_SELF_STICKS = CONFIG.HOST + STICK_API.PREFIX + ""
     static let SEND_STICKS = CONFIG.HOST + STICK_API.PREFIX + ""
 }
 
