@@ -13,6 +13,9 @@ class StickMedium: ObservableObject {
     @Published private(set) var Stick: StickApp = StickApp()
     @Published private(set) var UserModel: User = User()
     @Published private(set) var TagModel: TagApp = TagApp()
+    @Published private(set) var LocationModel: Map = Map()
+    
+    
     
     
     var Sticks: Array<StickApp.Stick> {
