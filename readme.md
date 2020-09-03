@@ -23,3 +23,5 @@
 * PostView Duration
   still long way to go ...
 * Location getting code
+
+* DARK MODE
