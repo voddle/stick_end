@@ -17,7 +17,6 @@ class StickMedium: ObservableObject {
     
     
     
-    
     var Sticks: Array<StickApp.Stick> {
         return Stick.sticks
     }
