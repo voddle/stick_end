@@ -156,7 +156,7 @@ struct PostView: View {
             //MARK: - I believe this component needs more code to realize the function of getting location, time, duration of stick, user_id (Maybe id the implicit func form the client)
             
         }
-        .background(Ano ? Color.gray : Color.white)
+        .background(Ano ? ColorManager.anodark : Color.white)// the anodark was refer to the Color assets
         .animation(Animation.easeInOut(duration: 0.1))
         
         

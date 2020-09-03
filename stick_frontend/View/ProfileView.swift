@@ -54,7 +54,7 @@ struct ProfileView: View {
                     self.condition.login()
                 }) {
                     Text("Logout")
-                        .padding(self.screenSize.width * 0.005)
+                        .padding(self.screenSize.width * 0.01)
                         .overlay(Rectangle().stroke(Color.black, lineWidth: 3))
                         .foregroundColor(Color.black)
                     .padding(.horizontal)
