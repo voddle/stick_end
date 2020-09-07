@@ -25,6 +25,7 @@ struct StickApp {
         var user: User  // 创建者的信息
         var tag: [TagApp.Tag] // 标签列表
         var comments: [Comment] // 评论列表
+        var liked_list: [User] //just added, need following development
 }
 
     
