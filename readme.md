@@ -25,3 +25,5 @@
 * Location getting code
 
 * DARK MODE
+
+* Stick's LIKED USER LIST FUNCTION (to decide the ui of like button)
