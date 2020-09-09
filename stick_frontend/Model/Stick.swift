@@ -78,6 +78,17 @@ struct StickApp {
         //need to make sure the Stick was sended successful or not
     }
     
+    func LikeStick (_ StickId: UUID) {
+        AF.request(LIKE_API.LIKE, method: .post, parameters: ["Stickid": StickId]).responseJSON { response in
+            let res = response.value as! NSDictionary
+            let data = res["data"] as! NSDictionary
+            let status_code = data["status code"] as! Int
+            if status_code == 200 {
+                //add thumb by 1 and change the bool value to modify the UI
+            }
+        }
+    }
+    
     init(){
         sticks = Array<Stick>()
         //getSticks()

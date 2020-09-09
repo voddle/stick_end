@@ -148,6 +148,9 @@ struct Stickify: View {
                             Image(systemName: "hand.thumbsup")
                                 .padding(.leading, self.screenSize.height * 0.001)
                             Text("\(stick.Thumb)")
+                                .onTapGesture {
+                                    <#code#>
+                            }// the like function
                                 
                                 .padding(.trailing,self.screenSize.height * 0.001)
                                 .padding(.trailing)

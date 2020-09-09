@@ -40,7 +40,9 @@ struct USER_STICK_API {
 }
 
 struct LIKE_API {
-    var a = 1
+    static let PREFIX = ""
+    static let LIKE = CONFIG.HOST + PREFIX + ""
+    static let DISLIKE = CONFIG.HOST + PREFIX + ""
 }
 
 struct TAG_API {
