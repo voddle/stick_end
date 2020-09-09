@@ -27,3 +27,5 @@
 * DARK MODE
 
 * Stick's LIKED USER LIST FUNCTION (to decide the ui of like button)
+
+* Like function, both API and front_end function needed
