@@ -13,6 +13,8 @@ struct Stickify: View {
     // 这里我把stickify的构造改成了下面
     // 直接传入一个State变量stick, 为Stick类型, 包含stick的信息(创建者, 内容，位置，评论等等)。
     // 在构造这个stick的时候直接访问stick的属性即可(stick.Content, stick.User.Username blabla)
+    @ObservedObject var StickViewModel: StickMedium
+    
     @State var stick: StickApp.Stick  //命名错误，已经改了
     
     let screenSize: CGRect = UIScreen.main.bounds
@@ -145,11 +147,18 @@ struct Stickify: View {
                         Spacer()
                         Group {
                             
-                            Image(systemName: "hand.thumbsup")
+                            if stick.liked {
+                                Image(systemName: "hand.thumbsup.fill")
                                 .padding(.leading, self.screenSize.height * 0.001)
+                            } else {
+                                Image(systemName: "hand.thumbsup")
+                                .padding(.leading, self.screenSize.height * 0.001)
+                            }
+                            
+                                
                             Text("\(stick.Thumb)")
                                 .onTapGesture {
-                                    <#code#>
+                                    self.StickViewModel.like(id: self.stick.id, index: self.StickViewModel.Sticks.firstIndex(matching: self.stick) ?? -1)
                             }// the like function
                                 
                                 .padding(.trailing,self.screenSize.height * 0.001)
@@ -189,7 +198,7 @@ struct Stickify: View {
     }
 }
 
-//MARK: - Cloud use an @State varible in browse view to control the fold of stick, and also add scale effect of other stick, the problem is the VStack and List, how to implement infinite scroll view, how to require stick content, how to sent comment, and how to post stick, need to make a list of those problem.
+//MARK: - Cloud use an @State varible in browse view to control the fold of stick, and also add scale effect of other stick, the problem is the VStack and List, how to implement infinite scroll view, how to require stick content, how to sent comment, and how to post stick, need to make a list of those problem. 
 
 //MARK: - Need add some paremeters in Stickify
 

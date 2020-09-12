@@ -65,4 +65,8 @@ class StickMedium: ObservableObject {
         Stick.sendStick(tags: tags, ano: ano, content: content, user_id: user_id)
     }
     
+    func like(id: UUID, index: Int) {
+        Stick.LikeStick(id, index)
+    }
+    
 }

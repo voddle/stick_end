@@ -26,6 +26,7 @@ struct StickApp {
         var tag: [TagApp.Tag] // 标签列表
         var comments: [Comment] // 评论列表
         var liked_list: [User] //just added, need following development
+        var liked: Bool
 }
 
     
@@ -78,13 +79,14 @@ struct StickApp {
         //need to make sure the Stick was sended successful or not
     }
     
-    func LikeStick (_ StickId: UUID) {
+    mutating func LikeStick (_ StickId: UUID, _ index: Int) {
         AF.request(LIKE_API.LIKE, method: .post, parameters: ["Stickid": StickId]).responseJSON { response in
             let res = response.value as! NSDictionary
             let data = res["data"] as! NSDictionary
             let status_code = data["status code"] as! Int
             if status_code == 200 {
-                //add thumb by 1 and change the bool value to modify the UI
+                self.sticks[index].Thumb += 1//add thumb by 1 and change the bool value to modify the UI
+                self.sticks[index].liked = true
             }
         }
     }
