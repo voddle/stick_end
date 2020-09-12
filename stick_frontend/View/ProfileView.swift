@@ -40,7 +40,7 @@ struct ProfileView: View {
                 
                 
                 ForEach (StickViewModel.SelfSticks) {Stick in
-                    Stickify(stick: Stick, Choosen: self.$choose)
+                    Stickify(StickViewModel: StickMedium(),stick: Stick, Choosen: self.$choose)
                 }
                 
             }.animation(Animation.easeInOut(duration: 0.1))

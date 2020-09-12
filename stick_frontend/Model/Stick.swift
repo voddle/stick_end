@@ -80,16 +80,26 @@ struct StickApp {
     }
     
     mutating func LikeStick (_ StickId: UUID, _ index: Int) {
+        
+        var Suc: Bool = false
+        
         AF.request(LIKE_API.LIKE, method: .post, parameters: ["Stickid": StickId]).responseJSON { response in
             let res = response.value as! NSDictionary
             let data = res["data"] as! NSDictionary
             let status_code = data["status code"] as! Int
             if status_code == 200 {
-                self.sticks[index].Thumb += 1//add thumb by 1 and change the bool value to modify the UI
-                self.sticks[index].liked = true
+//                self.sticks[index].Thumb += 1//add thumb by 1 and change the bool value to modify the UI
+//                self.sticks[index].liked = true
+                Suc.toggle()
             }
+            
+        }
+        if Suc {
+            self.sticks[index].Thumb += 1//add thumb by 1 and change the bool value to modify the UI
+            self.sticks[index].liked = true
         }
     }
+    
     
     init(){
         sticks = Array<Stick>()
