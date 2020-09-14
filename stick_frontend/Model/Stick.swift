@@ -24,7 +24,7 @@ struct StickApp {
         var Content: String
         var user: User  // 创建者的信息
         var tag: [TagApp.Tag] // 标签列表
-        var comments: [Comment] // 评论列表
+        var comments: [CommentModel.Comment] // 评论列表
         var liked_list: [User] //just added, need following development
         var liked: Bool
 }
@@ -99,6 +99,27 @@ struct StickApp {
             self.sticks[index].liked = true
         }
     }
+    
+    mutating func DislikeStick (_ StickId: UUID, _ index: Int) {
+            
+            var Suc: Bool = false
+            
+            AF.request(LIKE_API.LIKE, method: .post, parameters: ["Stickid": StickId]).responseJSON { response in
+                let res = response.value as! NSDictionary
+                let data = res["data"] as! NSDictionary
+                let status_code = data["status code"] as! Int
+                if status_code == 200 {
+    //                self.sticks[index].Thumb += 1//add thumb by 1 and change the bool value to modify the UI
+    //                self.sticks[index].liked = true
+                    Suc.toggle()
+                }
+                
+            }
+            if Suc {
+                self.sticks[index].Thumb -= 1//add thumb by 1 and change the bool value to modify the UI
+                self.sticks[index].liked = false
+            }
+        }
     
     
     init(){

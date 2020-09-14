@@ -8,9 +8,17 @@
 
 import Foundation
 
-struct Comment: Identifiable {
-    let commenter: User // 评论者的信息
-    let id: UUID// changed from comment_id
-    let stick_id: Int
-    let content: String
+struct CommentModel {
+
+    struct Comment: Identifiable {
+        let commenter: User // 评论者的信息
+        let id: UUID// changed from comment_id
+        let stick_id: Int
+        let content: String
+    }
+
+    func sendcomment (_ text: String) {
+        
+    }
+
 }

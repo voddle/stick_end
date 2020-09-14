@@ -23,6 +23,16 @@ struct ProfileView: View {
         
         VStack {
             HStack {
+                Text("Profile")
+                    .font(.title)
+                    .bold()
+                    .padding(.horizontal)
+                    .padding(.top)
+                    
+                Spacer()
+            }
+                
+            HStack {
                 Text(StickViewModel.Username)
                     .font(.largeTitle)
                     .bold()

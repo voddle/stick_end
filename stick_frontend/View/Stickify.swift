@@ -150,16 +150,20 @@ struct Stickify: View {
                             if stick.liked {
                                 Image(systemName: "hand.thumbsup.fill")
                                 .padding(.leading, self.screenSize.height * 0.001)
+                                .onTapGesture {
+                                        self.StickViewModel.like(id: self.stick.id, index: self.StickViewModel.Sticks.firstIndex(matching: self.stick) ?? -1)
+                                }// the like function
                             } else {
                                 Image(systemName: "hand.thumbsup")
                                 .padding(.leading, self.screenSize.height * 0.001)
+                                .onTapGesture {
+                                        self.StickViewModel.dislike(id: self.stick.id, index: self.StickViewModel.Sticks.firstIndex(matching: self.stick) ?? -1)
+                                }// the like function
                             }
                             
                                 
                             Text("\(stick.Thumb)")
-                                .onTapGesture {
-                                    self.StickViewModel.like(id: self.stick.id, index: self.StickViewModel.Sticks.firstIndex(matching: self.stick) ?? -1)
-                            }// the like function
+                                
                                 
                                 .padding(.trailing,self.screenSize.height * 0.001)
                                 .padding(.trailing)
@@ -169,6 +173,9 @@ struct Stickify: View {
                             Image(systemName: "text.bubble")
                                 .padding(.vertical,self.screenSize.height * 0.001)
                                 .padding(.trailing)
+                                .onTapGesture {
+                                    //need more code
+                            }
                         }
                         .font(.callout)
                         

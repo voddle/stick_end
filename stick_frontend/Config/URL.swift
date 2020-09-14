@@ -50,3 +50,8 @@ struct TAG_API {
     static let GET = CONFIG.HOST + PREFIX + ""
     static let SEND = CONFIG.HOST + PREFIX + ""
 }
+
+struct Comment_API {
+    static let PREFIX = ""
+    static let SEND = CONFIG.HOST + PREFIX + ""
+}
