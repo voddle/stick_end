@@ -122,6 +122,19 @@ struct StickApp {
         }
     
     
+    func sendcomment (_ text: String) {
+        AF.request(Comment_API.SEND, method: .post, parameters: ["text": text]).responseJSON { response in
+                    let res = response.value as! NSDictionary
+                    let data = res["data"] as! NSDictionary
+                    let status_code = data["status code"] as! Int
+                    if status_code == 200 {
+                        print("Send Successed")// MARK: NEED BE A VISUAL FEEDBACK
+                        // MARK: reload the comment section?
+                    }
+                    
+                }
+    }
+    
     init(){
         sticks = Array<Stick>()
         //getSticks()

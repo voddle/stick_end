@@ -7,6 +7,8 @@
 //
 
 import Foundation
+import Alamofire
+
 
 struct CommentModel {
 
@@ -17,8 +19,5 @@ struct CommentModel {
         let content: String
     }
 
-    func sendcomment (_ text: String) {
-        
-    }
 
 }

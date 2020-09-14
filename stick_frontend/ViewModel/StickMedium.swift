@@ -73,5 +73,8 @@ class StickMedium: ObservableObject {
         Stick.LikeStick(id, index)
     }
     
+    func sendcomment(text: String) {
+        Stick.sendcomment(text)
+    }
     
 }

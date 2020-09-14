@@ -174,7 +174,7 @@ struct Stickify: View {
                                 .padding(.vertical,self.screenSize.height * 0.001)
                                 .padding(.trailing)
                                 .onTapGesture {
-                                    //need more code
+                                    self.StickViewModel.sendcomment(text: self.comment)//need more code
                             }
                         }
                         .font(.callout)
