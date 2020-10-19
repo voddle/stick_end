@@ -148,7 +148,7 @@ struct Stickify: View {
                         Spacer()
                         Group {
                             
-                            if (StickViewModel.LikedList.index(of: self.stick.id) != nil) {
+                            if (StickViewModel.LikedList.firstIndex(of: self.stick.id) != nil) {
                                 Image(systemName: "hand.thumbsup.fill")
                                 .padding(.leading, self.screenSize.height * 0.001)
                                 .onTapGesture {

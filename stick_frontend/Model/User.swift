@@ -96,6 +96,10 @@ struct User {
     mutating func LikeHappend(_ id: UUID) {
         self.Liked_List.append(id)
     }
+    
+    mutating func DislikeHappend(_ id: UUID) {
+        self.Liked_List.remove(at: self.Liked_List.firstIndex(of: id)!)
+    }
 }
 
 

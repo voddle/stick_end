@@ -76,6 +76,7 @@ class StickMedium: ObservableObject {
     
     func dislike(id: UUID, index: Int) {
         Stick.LikeStick(id, index)
+        UserModel.DislikeHappend(id)
     }
     
     func sendcomment(text: String) {
