@@ -27,6 +27,7 @@
 * DARK MODE
 
 * Stick's LIKED USER LIST FUNCTION (to decide the ui of like button)
+	(this functon was changed, the liked_list will record the stick's id of which liked by the user, each user was correspond to a specific list)
 
 * Like function, both API and front_end function needed
 
