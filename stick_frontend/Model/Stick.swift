@@ -99,6 +99,7 @@ struct StickApp {
         if Suc {
             self.sticks[index].Thumb += 1//add thumb by 1 and change the bool value to modify the UI
             self.sticks[index].liked = true
+            //User.Liked_List.append(self.sticks[index].id)
         }
     }
     

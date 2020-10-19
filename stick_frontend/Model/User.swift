@@ -92,6 +92,10 @@ struct User {
      mutating func logout() {
         self.Token = ""
     }
+    
+    mutating func LikeHappend(_ id: UUID) {
+        self.Liked_List.append(id)
+    }
 }
 
 
