@@ -31,6 +31,7 @@
 	(the Bool liked is depending on the user's liked list now, next step is append the stick'id to the likedlist and remove from the list)
 
 *liked list is addable for local now
+*liked list is removable for local now (the next step is push the lastest likedlist to the server)
 
 * Like function, both API and front_end function needed
 
