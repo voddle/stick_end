@@ -163,8 +163,6 @@ struct Stickify: View {
                             
                                 
                             Text("\(stick.Thumb)")
-                                
-                                
                                 .padding(.trailing,self.screenSize.height * 0.001)
                                 .padding(.trailing)
                             Image(systemName: "star")
