@@ -17,7 +17,7 @@ struct User {
     var Email: String = ""
     var Token: String = ""
     var Avatar: String = ""
-    var Liked_List: [StickApp.Stick.ID] = []
+    var Liked_List: [UUID] = []
     
     
      mutating func login (_ email: String, _ password: String){
@@ -28,7 +28,7 @@ struct User {
         var email: String = ""
         var avatar: String = ""
         var token: String = ""
-        var Liked_List: [StickApp.Stick.ID] = []
+        var Liked_List: [UUID] = []
         
         if self.Token == "" {
             
@@ -41,7 +41,7 @@ struct User {
                                 pass = data["password"] as! String
                                 email = data["email"] as! String
                                 avatar = data["avatar"] as! String
-                                Liked_List = data["Liked_List"] as! Array<UUID>
+                                Liked_List = data["Liked_List"] as! [UUID]
                                 token = data["token"] as! String
             }
             self.User_id = id
@@ -50,6 +50,7 @@ struct User {
             self.Email = email
             self.Avatar = avatar
             self.Token = token
+            self.Liked_List = Liked_List
         } else {
             print("jajajadfadfa")
         }

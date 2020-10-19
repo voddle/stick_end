@@ -33,6 +33,10 @@ class StickMedium: ObservableObject {
         return UserModel.Username
     }
     
+    var LikedList:[UUID] {
+        return UserModel.Liked_List
+    }
+    
     var Avatar: String {
         return UserModel.Avatar
     }

@@ -28,6 +28,7 @@ struct Stickify: View {
     @State private var Content: String = ""
     
     
+    
     var body: some View {
         
         
@@ -147,7 +148,7 @@ struct Stickify: View {
                         Spacer()
                         Group {
                             
-                            if stick.liked {
+                            if (StickViewModel.LikedList.index(of: self.stick.id) != nil) {
                                 Image(systemName: "hand.thumbsup.fill")
                                 .padding(.leading, self.screenSize.height * 0.001)
                                 .onTapGesture {

@@ -15,7 +15,7 @@ struct StickApp {
     
 
     struct Stick: Identifiable{
-        var id: UUID //in order to conform the protocol: Identifiable to implement the ForEach on Sticks, the "User_id: was changed to the "id", So as other model
+        var id : UUID //in order to conform the protocol: Identifiable to implement the ForEach on Sticks, the "User_id: was changed to the "id", So as other model
         let Creat_at: String
         let End_at: String
         var Is_ano: Bool
@@ -46,7 +46,9 @@ struct StickApp {
             let data = res["data"] as! Array<Stick>
             
             sticks = data
+            
         }
+        
         print(sticks)
         self.sticks.append(contentsOf: sticks)
     }
