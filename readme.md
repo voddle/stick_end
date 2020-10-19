@@ -28,7 +28,7 @@
 
 * Stick's LIKED USER LIST FUNCTION (to decide the ui of like button)
 	(this functon was changed, the liked_list will record the stick's id of which liked by the user, each user was correspond to a specific list)
-
+	(the Bool liked is depending on the user's liked list now, next step is append the stick'id to the likedlist and remove from the list)
 * Like function, both API and front_end function needed
 
 * Comment function required
